@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/Vince/Downloads/pokemon-collection_3.html -->
+<!-- saved from url=(0058)file:///C:/Users/Vince/Downloads/pokemon-collection_9.html -->
 <html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -482,12 +482,12 @@ body {
         <span class="logo-text">PokéVault</span>
       </div>
       <div class="header-stats">
-        <span class="stat-pill"><strong id="total-cards">0</strong> collectie</span>
+        <span class="stat-pill"><strong id="total-cards">1</strong> collectie</span>
         <span class="stat-pill" style="color:#9B7FE8"><strong id="total-chase">0</strong> chase</span>
-        <span class="stat-pill">€<strong id="total-value">0</strong></span>
+        <span class="stat-pill">€<strong id="total-value">340</strong></span>
       </div>
       <div style="text-align:right;">
-        <span id="sync-status" style="font-size: 10px; font-weight: 700; color: rgb(72, 187, 120); opacity: 0; transition: opacity 0.5s;">☁ Gesynchroniseerd</span>
+        <span id="sync-status" style="font-size:10px;font-weight:700;color:#48BB78;opacity:0;transition:opacity 0.5s;"></span>
       </div>
     </div>
   </div>
@@ -503,7 +503,31 @@ body {
     <div class="search-bar">
       <input class="search-input" type="search" placeholder="Zoek in je collectie…" id="search-input" oninput="renderCards()">
     </div>
-    <div class="content"><div id="cards-list"><div class="empty"><div class="empty-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg></div><div class="empty-title">Nog geen kaarten</div><div class="empty-sub">Ga naar + Toevoegen om te beginnen.</div></div></div></div>
+    <div class="content"><div id="cards-list"><div class="card-item">
+      <div class="card-inner">
+        <div class="card-thumb"><img src="./index_files/small" alt="Team Rocket&#39;s Mewtwo ex" loading="lazy"></div>
+        <div class="card-body">
+          <div class="card-name">Team Rocket's Mewtwo ex</div>
+          <div class="card-meta">#281 · Ascended Heroes</div>
+          <div class="price-grid">
+            <div class="price-cell"><div class="price-label">Raw</div><div class="price-value">€340.00</div></div>
+            <div class="price-cell"><div class="price-label">ACE 10</div><div class="price-value">€600.00</div></div>
+            <div class="price-cell"><div class="price-label">PSA 10</div><div class="price-value">€1150.00</div></div>
+          </div>
+          <div class="card-links">
+            <a class="link-btn ebay" href="https://www.ebay.nl/sch/i.html?_nkw=Team%20Rocket%27s%20Mewtwo%20ex%20Ascended%20Heroes%20281%20raw%20pokemon&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=3" target="_blank">eBay Raw</a>
+            <a class="link-btn ebay" href="https://www.ebay.nl/sch/i.html?_nkw=Team%20Rocket%27s%20Mewtwo%20ex%20Ascended%20Heroes%20281%20PSA%2010%20pokemon&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=3" target="_blank">eBay PSA</a>
+            <a class="link-btn cardmarket" href="https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Team+Rocket%27s+Mewtwo+ex+281&amp;sellerCountry=2%2C23&amp;language=1&amp;minCondition=6" target="_blank">Cardmarket</a>
+            <a class="link-btn pricecharting" href="https://www.pricecharting.com/search-products?q=Team%20Rocket%27s%20Mewtwo%20ex%20281%20pokemon&amp;type=prices" target="_blank">Pricecharting</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="action-btn refresh" onclick="refreshCard(&#39;mofy6npfegzmmx6p7pi&#39;)">↻ eBay</button>
+        <button class="action-btn" onclick="editCard(&#39;mofy6npfegzmmx6p7pi&#39;)">✎ Bewerken</button>
+        <button class="action-btn danger" onclick="deleteCard(&#39;mofy6npfegzmmx6p7pi&#39;)">✕ Verwijder</button>
+      </div>
+    </div></div></div>
   </div>
 
   <div id="tab-chase" class="page">
@@ -694,7 +718,7 @@ body {
   </div>
 </div>
 
-<div class="toast" id="toast">Cloud laden…</div>
+<div class="toast" id="toast">☁ Gesynchroniseerd!</div>
 
 <script>
 const SK = 'pokevault_cards', SS = 'pokevault_settings';
@@ -982,7 +1006,7 @@ function addSelectedCard(list='collection'){
   }
 }
 
-function ebayUrl(card,grade){ return `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(card.name+' '+(card.number||'')+' '+grade+' pokemon card')}&LH_Sold=1&LH_Complete=1&_sacat=2536`; }
+function ebayUrl(card,grade){ const num=(card.number||'').split('/')[0].trim(); const q=[card.name, card.set||'', num, grade, 'pokemon'].filter(Boolean).join(' '); return `https://www.ebay.nl/sch/i.html?_nkw=${encodeURIComponent(q)}&LH_Sold=1&LH_Complete=1&_sacat=2536&LH_PrefLoc=3`; }
 function cmUrl(card){ const num=(card.number||'').split('/')[0].trim(); if(card.cmUrl){ const u=new URL(card.cmUrl); if(cfg.cmCountries) u.searchParams.set('sellerCountry',cfg.cmCountries); if(cfg.cmLanguage) u.searchParams.set('language',cfg.cmLanguage); if(cfg.cmCondition) u.searchParams.set('minCondition',cfg.cmCondition); return u.toString(); } const params=new URLSearchParams(); params.set('searchString',card.name+(num?' '+num:'')); if(cfg.cmCountries) params.set('sellerCountry',cfg.cmCountries); if(cfg.cmLanguage) params.set('language',cfg.cmLanguage); if(cfg.cmCondition) params.set('minCondition',cfg.cmCondition); return 'https://www.cardmarket.com/en/Pokemon/Products/Search?'+params.toString(); }
 function pcUrl(card){ return card.pcUrl||`https://www.pricecharting.com/search-products?q=${encodeURIComponent(card.name+' '+(card.number||'')+' pokemon')}&type=prices`; }
 
