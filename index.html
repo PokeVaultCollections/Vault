@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)file:///C:/Users/Vince/Downloads/pokemon-collection.html -->
+<!-- saved from url=(0058)file:///C:/Users/Vince/Downloads/pokemon-collection_1.html -->
 <html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -9,139 +9,468 @@
 <meta name="theme-color" content="#ffffff">
 <title>PokéVault</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 :root {
-  --accent: #E53E3E; --accent-light: #FFF5F5;
-  --bg: #F7F7F5; --surface: #FFFFFF;
-  --border: rgba(0,0,0,0.08); --border-strong: rgba(0,0,0,0.15);
-  --text: #1A1A1A; --text-muted: #6B6B6B; --text-faint: #A0A0A0;
-  --radius: 12px; --radius-sm: 8px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  --red: #E3350D;
+  --red-dark: #B5280A;
+  --red-glow: rgba(227,53,13,0.3);
+  --yellow: #FFCB05;
+  --yellow-dark: #C9A000;
+  --blue: #3B5EA6;
+  --bg: #0F0F1A;
+  --bg2: #171728;
+  --bg3: #1E1E30;
+  --surface: #1A1A2E;
+  --surface2: #22223A;
+  --border: rgba(255,255,255,0.06);
+  --border-strong: rgba(255,255,255,0.12);
+  --text: #F0F0F5;
+  --text-muted: #8888AA;
+  --text-faint: #55557A;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font: 'Nunito', -apple-system, sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111111; --surface: #1C1C1C;
-    --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.15);
-    --text: #F0F0F0; --text-muted: #9A9A9A; --text-faint: #555555;
-    --accent-light: #2D1515;
-  }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(227,53,13,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 10% 80%, rgba(59,94,166,0.08) 0%, transparent 60%);
 }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100dvh; overflow-x: hidden; }
 .app { max-width: 500px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; }
-.header { background: var(--surface); border-bottom: 0.5px solid var(--border); padding: 14px 16px 10px; position: sticky; top: 0; z-index: 100; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1A0A0A 0%, #1A1A2E 100%);
+  border-bottom: 1px solid rgba(227,53,13,0.2);
+  padding: 14px 16px 10px;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
 .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.logo { display: flex; align-items: center; gap: 8px; }
-.logo-icon { width: 28px; height: 28px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.logo-icon svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 2; }
-.logo-text { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
-.header-stats { display: flex; gap: 14px; }
-.stat-pill { font-size: 12px; color: var(--text-muted); }
-.stat-pill strong { color: var(--text); font-weight: 600; }
-.tabs { display: flex; background: var(--surface); border-bottom: 0.5px solid var(--border); position: sticky; top: 64px; z-index: 99; }
-.tab { flex: 1; padding: 10px 4px; text-align: center; font-size: 12px; font-weight: 500; color: var(--text-muted); border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; }
-.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--red) 50%, #fff 50%);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid #333;
+  position: relative;
+  box-shadow: 0 0 12px var(--red-glow);
+  flex-shrink: 0;
+}
+.logo-icon::after {
+  content: '';
+  width: 8px; height: 8px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #333;
+  position: absolute;
+}
+.logo-text {
+  font-size: 20px; font-weight: 900;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff 30%, var(--yellow));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.header-stats { display: flex; gap: 10px; }
+.stat-pill {
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg3);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+.stat-pill strong { color: var(--yellow); }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 72px; z-index: 99;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: 1; padding: 10px 4px; text-align: center;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-faint);
+  border: none; background: none; cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s cubic-bezier(0.32,0.72,0,1);
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.tab.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+
 .content { flex: 1; padding: 12px 14px; }
 .page { display: none; }
 .page.active { display: block; }
-.search-bar { padding: 10px 14px; background: var(--surface); border-bottom: 0.5px solid var(--border); }
-.search-input { width: 100%; padding: 9px 14px; border: 0.5px solid var(--border-strong); border-radius: 20px; font-size: 14px; background: var(--bg); color: var(--text); outline: none; }
-.search-input:focus { border-color: var(--accent); }
-.card-item { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px; margin-bottom: 10px; box-shadow: var(--shadow); }
+
+/* Search */
+.search-bar { padding: 10px 14px; background: var(--bg2); border-bottom: 1px solid var(--border); }
+.search-input {
+  width: 100%; padding: 10px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  font-size: 14px; font-weight: 600;
+  background: var(--bg3);
+  color: var(--text);
+  outline: none;
+  font-family: var(--font);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-glow); }
+.search-input::placeholder { color: var(--text-faint); }
+
+/* Collection cards */
+.card-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+.card-item::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--yellow));
+  opacity: 0.6;
+}
+.card-item:active { transform: scale(0.99); }
 .card-inner { display: flex; gap: 12px; }
 .card-thumb { width: 64px; flex-shrink: 0; }
-.card-thumb img { width: 64px; height: 90px; object-fit: contain; border-radius: 6px; background: var(--bg); display: block; }
-.card-thumb-ph { width: 64px; height: 90px; background: var(--bg); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.card-thumb img { width: 64px; height: 90px; object-fit: contain; border-radius: 8px; background: var(--bg3); display: block; }
+.card-thumb-ph {
+  width: 64px; height: 90px;
+  background: var(--bg3);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+}
 .card-body { flex: 1; min-width: 0; }
-.card-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.card-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 7px 0; }
-.price-cell { background: var(--bg); border-radius: 6px; padding: 5px; text-align: center; }
-.price-label { font-size: 9px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 2px; }
-.price-value { font-size: 12px; font-weight: 600; }
+.card-name { font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin: 8px 0; }
+.price-cell {
+  background: var(--bg3);
+  border-radius: 8px; padding: 6px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.price-label { font-size: 9px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; font-weight: 700; }
+.price-value { font-size: 12px; font-weight: 800; color: var(--yellow); }
 .card-links { display: flex; gap: 4px; flex-wrap: wrap; }
-.link-btn { flex: 1; min-width: 56px; padding: 5px 4px; border-radius: 6px; border: 0.5px solid var(--border-strong); background: var(--bg); font-size: 10px; font-weight: 500; color: var(--text-muted); text-align: center; cursor: pointer; text-decoration: none; display: block; }
-.link-btn.ebay { border-color: #0064d2; color: #0064d2; }
-.link-btn.cardmarket { border-color: #00A550; color: #00A550; }
-.link-btn.pricecharting { border-color: #6B46C1; color: #6B46C1; }
-.card-actions { display: flex; gap: 4px; margin-top: 8px; border-top: 0.5px solid var(--border); padding-top: 8px; }
-.action-btn { flex: 1; padding: 6px; border: none; background: none; font-size: 11px; color: var(--text-muted); cursor: pointer; border-radius: 6px; }
-.action-btn.danger { color: var(--accent); }
-.action-btn.refresh { color: #0064d2; }
+.link-btn {
+  flex: 1; min-width: 56px; padding: 5px 4px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg3);
+  font-size: 10px; font-weight: 700;
+  color: var(--text-muted);
+  text-align: center; cursor: pointer; text-decoration: none; display: block;
+  transition: all 0.15s;
+  font-family: var(--font);
+}
+.link-btn:active { transform: scale(0.97); }
+.link-btn.ebay { border-color: #0064d2; color: #4d9eff; }
+.link-btn.cardmarket { border-color: #00A550; color: #00cc66; }
+.link-btn.pricecharting { border-color: #9B7FE8; color: #b9a0ff; }
+.card-actions {
+  display: flex; gap: 4px; margin-top: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+.action-btn {
+  flex: 1; padding: 6px; border: none; background: none;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted); cursor: pointer;
+  border-radius: 8px;
+  font-family: var(--font);
+  transition: background 0.15s, color 0.15s;
+}
+.action-btn:hover { background: var(--bg3); }
+.action-btn.danger { color: var(--red); }
+.action-btn.refresh { color: #4d9eff; }
+
+/* Empty state */
 .empty { text-align: center; padding: 48px 24px; }
-.empty-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
-.empty-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
-.empty-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-.empty-sub { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-.add-search-input { width: 100%; padding: 12px 14px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 15px; background: var(--surface); color: var(--text); outline: none; margin-bottom: 12px; }
-.add-search-input:focus { border-color: var(--accent); }
-.search-results { background: var(--surface); border: 0.5px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
-.search-result-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-bottom: 0.5px solid var(--border); cursor: pointer; }
+.empty-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--red) 50%, #fff 50%);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+  border: 3px solid var(--bg3);
+  position: relative;
+  box-shadow: 0 0 20px var(--red-glow);
+}
+.empty-icon::after {
+  content: '';
+  width: 12px; height: 12px;
+  background: white; border-radius: 50%;
+  border: 3px solid var(--bg3);
+  position: absolute;
+}
+.empty-title { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+.empty-sub { font-size: 13px; color: var(--text-muted); line-height: 1.5; font-weight: 600; }
+
+/* Add tab */
+.add-search-input {
+  width: 100%; padding: 13px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 15px; font-weight: 700;
+  background: var(--surface2);
+  color: var(--text);
+  outline: none;
+  margin-bottom: 12px;
+  font-family: var(--font);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.add-search-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-glow); }
+.add-search-input::placeholder { color: var(--text-faint); }
+.search-results {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  overflow: hidden; margin-bottom: 12px;
+}
+.search-result-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
 .search-result-item:last-child { border-bottom: none; }
-.search-result-item:active { background: var(--bg); }
-.result-img { width: 40px; height: 56px; object-fit: contain; border-radius: 4px; background: var(--bg); flex-shrink: 0; }
+.search-result-item:active { background: var(--bg3); }
+.result-img { width: 40px; height: 56px; object-fit: contain; border-radius: 6px; background: var(--bg3); flex-shrink: 0; }
 .result-info { flex: 1; min-width: 0; }
-.result-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.result-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-.result-add { width: 28px; height: 28px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.result-name { font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.result-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
+.result-add {
+  width: 30px; height: 30px;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px var(--red-glow);
+}
 .result-add svg { width: 14px; height: 14px; stroke: white; fill: none; stroke-width: 2.5; }
-.search-status { padding: 16px; text-align: center; font-size: 13px; color: var(--text-muted); }
-.selected-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px; margin-bottom: 14px; }
+.search-status { padding: 16px; text-align: center; font-size: 13px; color: var(--text-muted); font-weight: 600; }
+
+/* Selected card */
+.selected-card {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius); padding: 14px; margin-bottom: 14px;
+}
 .selected-card-inner { display: flex; gap: 14px; margin-bottom: 10px; }
-.selected-card-img img { width: 80px; height: 112px; object-fit: contain; border-radius: 6px; }
-.selected-card-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-.selected-card-meta { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
-.deselect-btn { font-size: 12px; color: var(--accent); background: none; border: none; cursor: pointer; }
+.selected-card-img img { width: 80px; height: 112px; object-fit: contain; border-radius: 8px; }
+.selected-card-name { font-size: 16px; font-weight: 900; margin-bottom: 4px; }
+.selected-card-meta { font-size: 12px; color: var(--text-muted); line-height: 1.6; font-weight: 600; }
+.deselect-btn { font-size: 12px; color: var(--red); background: none; border: none; cursor: pointer; font-weight: 700; font-family: var(--font); }
+
+/* Forms */
 .form-group { margin-bottom: 11px; }
-.form-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: block; font-weight: 500; }
-.form-input { width: 100%; padding: 10px 12px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 14px; background: var(--bg); color: var(--text); outline: none; }
-.form-input:focus { border-color: var(--accent); }
-.form-section { font-size: 11px; font-weight: 600; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; margin: 14px 0 7px; }
-.form-hint { font-size: 11px; color: var(--text-faint); margin-bottom: 8px; line-height: 1.4; }
-.btn-primary { width: 100%; padding: 13px; background: var(--accent); color: white; border: none; border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 6px; }
-.btn-primary:active { opacity: 0.85; }
-.btn-secondary { width: 100%; padding: 12px; background: none; color: var(--text-muted); border: none; border-radius: var(--radius); font-size: 14px; cursor: pointer; margin-top: 2px; }
+.form-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: block; font-weight: 700; letter-spacing: 0.3px; }
+.form-input {
+  width: 100%; padding: 10px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 600;
+  background: var(--bg3); color: var(--text);
+  outline: none; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--red); }
+.form-section {
+  font-size: 10px; font-weight: 900;
+  color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin: 14px 0 7px;
+}
+.form-hint { font-size: 11px; color: var(--text-faint); margin-bottom: 8px; line-height: 1.4; font-weight: 600; }
+.btn-primary {
+  width: 100%; padding: 14px;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: white; border: none;
+  border-radius: var(--radius);
+  font-size: 15px; font-weight: 900;
+  cursor: pointer; margin-top: 6px;
+  font-family: var(--font);
+  box-shadow: 0 4px 16px var(--red-glow);
+  transition: all 0.2s cubic-bezier(0.32,0.72,0,1);
+  letter-spacing: 0.3px;
+}
+.btn-primary:active { transform: scale(0.98); opacity: 0.9; }
+.btn-secondary {
+  width: 100%; padding: 12px;
+  background: none; color: var(--text-muted);
+  border: none; border-radius: var(--radius);
+  font-size: 14px; cursor: pointer; font-family: var(--font);
+  font-weight: 700;
+}
 .manual-prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.mpf label { font-size: 10px; color: var(--text-faint); display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.3px; }
-.mpf input { width: 100%; padding: 7px 8px; border: 0.5px solid var(--border-strong); border-radius: 6px; font-size: 13px; background: var(--surface); color: var(--text); outline: none; }
-.mpf input:focus { border-color: var(--accent); }
+.mpf label { font-size: 10px; color: var(--text-faint); display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.mpf input {
+  width: 100%; padding: 7px 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px; font-size: 13px; font-weight: 700;
+  background: var(--bg3); color: var(--text); outline: none;
+  font-family: var(--font);
+}
+.mpf input:focus { border-color: var(--red); }
+
+/* Settings */
 .settings-section { margin-bottom: 20px; }
-.settings-title { font-size: 11px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; padding: 0 4px; margin-bottom: 6px; }
-.settings-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.settings-row { padding: 12px 14px; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.settings-title {
+  font-size: 10px; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 1px;
+  font-weight: 900; padding: 0 4px; margin-bottom: 6px;
+}
+.settings-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+}
+.settings-row {
+  padding: 12px 14px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
 .settings-row:last-child { border-bottom: none; }
-.settings-row-label { font-size: 14px; font-weight: 500; }
-.settings-row-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
-.settings-input { width: 100%; padding: 9px 11px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 12px; background: var(--bg); color: var(--text); outline: none; font-family: monospace; margin-top: 7px; }
-.settings-input:focus { border-color: var(--accent); }
-.save-btn { padding: 7px 14px; background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 300; align-items: flex-end; }
+.settings-row-label { font-size: 14px; font-weight: 800; }
+.settings-row-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; font-weight: 600; }
+.settings-input {
+  width: 100%; padding: 9px 11px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 12px; background: var(--bg3); color: var(--text);
+  outline: none; font-family: monospace; margin-top: 7px;
+}
+.settings-input:focus { border-color: var(--red); }
+.save-btn {
+  padding: 7px 14px;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: white; border: none;
+  border-radius: var(--radius-sm);
+  font-size: 12px; font-weight: 900; cursor: pointer;
+  white-space: nowrap; flex-shrink: 0;
+  font-family: var(--font);
+  box-shadow: 0 2px 8px var(--red-glow);
+}
+
+/* User tabs (Chase) */
+.user-tab {
+  flex: 1; padding: 9px 4px; text-align: center;
+  font-size: 13px; font-weight: 800;
+  color: var(--text-faint);
+  border: none; background: none; cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s; font-family: var(--font);
+}
+.active-user { color: #9B7FE8; border-bottom-color: #9B7FE8 !important; }
+
+/* Pokemon groups */
+.pokemon-group { margin-bottom: 8px; }
+.pokemon-group-header {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.pokemon-group-header:active { background: var(--surface2); }
+.pokemon-group-thumb { width: 40px; height: 40px; object-fit: contain; border-radius: 6px; }
+.pokemon-group-thumb-ph { width: 40px; height: 40px; background: var(--bg3); border-radius: 6px; flex-shrink: 0; }
+.pokemon-group-name { font-size: 14px; font-weight: 800; flex: 1; }
+.pokemon-group-count {
+  font-size: 11px; color: var(--bg);
+  background: var(--yellow);
+  padding: 3px 9px; border-radius: 20px;
+  font-weight: 900;
+}
+.pokemon-group-arrow { font-size: 11px; color: var(--text-faint); transition: transform 0.2s; }
+.pokemon-group-arrow.open { transform: rotate(90deg); }
+.pokemon-group-cards { display: none; padding: 6px 0 4px; }
+.pokemon-group-cards.open { display: block; }
+.chase-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid #9B7FE8;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 10px 10px 12px;
+  margin-bottom: 6px;
+}
+
+/* Modal */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 300; align-items: flex-end; backdrop-filter: blur(4px); }
 .modal-overlay.open { display: flex; }
-.modal { background: var(--surface); border-radius: 20px 20px 0 0; padding: 18px 16px; width: 100%; max-height: 92dvh; overflow-y: auto; padding-bottom: max(18px, env(safe-area-inset-bottom)); }
+.modal {
+  background: var(--surface);
+  border-radius: 24px 24px 0 0;
+  border-top: 1px solid var(--border-strong);
+  padding: 18px 16px; width: 100%;
+  max-height: 92dvh; overflow-y: auto;
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
+}
 .modal-handle { width: 36px; height: 4px; background: var(--border-strong); border-radius: 2px; margin: 0 auto 16px; }
-.modal-title { font-size: 16px; font-weight: 600; margin-bottom: 14px; }
-.modal-preview { display: flex; gap: 12px; align-items: center; background: var(--bg); border-radius: var(--radius-sm); padding: 10px; margin-bottom: 14px; }
-.modal-preview img { width: 50px; height: 70px; object-fit: contain; border-radius: 4px; }
-.modal-preview .name { font-size: 14px; font-weight: 600; }
-.modal-preview .meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1A1A1A; color: white; padding: 10px 20px; border-radius: 20px; font-size: 13px; font-weight: 500; z-index: 400; opacity: 0; transition: opacity 0.2s; white-space: nowrap; pointer-events: none; }
+.modal-title { font-size: 17px; font-weight: 900; margin-bottom: 14px; }
+.modal-preview {
+  display: flex; gap: 12px; align-items: center;
+  background: var(--bg3); border-radius: var(--radius-sm);
+  padding: 10px; margin-bottom: 14px;
+}
+.modal-preview img { width: 50px; height: 70px; object-fit: contain; border-radius: 6px; }
+.modal-preview .name { font-size: 14px; font-weight: 800; }
+.modal-preview .meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: white; padding: 10px 20px;
+  border-radius: 20px; font-size: 13px; font-weight: 800;
+  z-index: 400; opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap; pointer-events: none;
+  box-shadow: 0 4px 16px var(--red-glow);
+  font-family: var(--font);
+}
 .toast.show { opacity: 1; }
-.spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--border-strong); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 5px; }
+
+/* Spinner */
+.spinner {
+  display: inline-block; width: 14px; height: 14px;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--red);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle; margin-right: 5px;
+}
 @keyframes spin { to { transform: rotate(360deg); } }
-.notice { background: var(--accent-light); border: 0.5px solid var(--accent); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 12px; color: var(--accent); margin-bottom: 12px; line-height: 1.5; }
-.user-tab { flex:1; padding:9px 4px; text-align:center; font-size:13px; font-weight:500; color:var(--text-muted); border:none; background:none; cursor:pointer; border-bottom:2px solid transparent; transition:all 0.15s; }
-.active-user { color:#6B46C1; border-bottom-color:#6B46C1 !important; }
-.pokemon-group { margin-bottom:8px; }
-.pokemon-group-header { display:flex; align-items:center; gap:10px; background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius); padding:10px 12px; cursor:pointer; transition:background 0.1s; margin-bottom:0; }
-.pokemon-group-header:active { background:var(--bg); }
-.pokemon-group-thumb { width:40px; height:40px; object-fit:contain; border-radius:4px; }
-.pokemon-group-thumb-ph { width:40px; height:40px; background:var(--bg); border-radius:4px; flex-shrink:0; }
-.pokemon-group-name { font-size:14px; font-weight:600; flex:1; }
-.pokemon-group-count { font-size:11px; color:var(--text-faint); background:var(--bg); padding:3px 8px; border-radius:20px; }
-.pokemon-group-arrow { font-size:12px; color:var(--text-faint); transition:transform 0.2s; }
-.pokemon-group-arrow.open { transform:rotate(90deg); }
-.pokemon-group-cards { display:none; padding:6px 0 4px; }
-.pokemon-group-cards.open { display:block; }
-.chase-card { background:var(--surface); border:0.5px solid var(--border); border-left:3px solid #6B46C1; border-radius:0 var(--radius) var(--radius) 0; padding:10px 10px 10px 12px; margin-bottom:6px; }
+
+.notice {
+  background: rgba(227,53,13,0.1);
+  border: 1px solid rgba(227,53,13,0.3);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px; font-size: 12px; color: #ff8060;
+  margin-bottom: 12px; line-height: 1.5; font-weight: 700;
+}
 </style>
 </head>
 <body>
@@ -149,7 +478,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="header">
     <div class="header-top">
       <div class="logo">
-        <div class="logo-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><circle cx="12" cy="12" r="3" fill="white"></circle></svg></div>
+        <div class="logo-icon"></div>
         <span class="logo-text">PokéVault</span>
       </div>
       <div class="header-stats">
@@ -161,13 +490,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 
   <div class="tabs">
-    <button class="tab" onclick="switchTab(&#39;collection&#39;,this)">Collectie</button>
+    <button class="tab active" onclick="switchTab(&#39;collection&#39;,this)">Collectie</button>
     <button class="tab" onclick="switchTab(&#39;chase&#39;,this)">Chase Cards</button>
     <button class="tab" onclick="switchTab(&#39;add&#39;,this)">+ Toevoegen</button>
-    <button class="tab active" onclick="switchTab(&#39;settings&#39;,this)">Instellingen</button>
+    <button class="tab" onclick="switchTab(&#39;settings&#39;,this)">Instellingen</button>
   </div>
 
-  <div id="tab-collection" class="page">
+  <div id="tab-collection" class="page active">
     <div class="search-bar">
       <input class="search-input" type="search" placeholder="Zoek in je collectie…" id="search-input" oninput="renderCards()">
     </div>
@@ -182,12 +511,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <button id="user-btn-Vincent" class="user-tab active-user" onclick="switchUser(&#39;Vincent&#39;)">Vincent</button>
       <button id="user-btn-Skye" class="user-tab" onclick="switchUser(&#39;Skye&#39;)">Skye</button>
     </div>
-    <div class="content"><div id="chase-list"><div class="empty"><div class="empty-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" fill="none" stroke-width="1.5"></path></svg></div><div class="empty-title">Nog geen Chase Cards</div><div class="empty-sub">Voeg kaarten toe via + Toevoegen → Chase Cards.</div></div></div></div>
+    <div class="content"><div id="chase-list"><div class="empty"><div class="empty-icon"></div><div class="empty-title">Nog geen Chase Cards</div><div class="empty-sub">Voeg kaarten toe via + Toevoegen → Chase Cards.</div></div></div></div>
   </div>
 
   <div id="tab-add" class="page">
     <div class="content">
-      <div id="no-key-notice" class="notice" style="display: none;">Stel eerst je <strong>Scrydex API key</strong> in bij Instellingen om kaarten te zoeken.</div>
+      <div id="no-key-notice" class="notice" style="display:none">Stel eerst je <strong>Scrydex API key</strong> in bij Instellingen om kaarten te zoeken.</div>
       <div id="search-section">
         <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">Zoek een kaart op naam:</p>
         <input class="add-search-input" type="text" id="card-search" placeholder="bijv. Charizard, Pikachu, Mewtwo…" oninput="debounceSearch(this.value)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
@@ -220,7 +549,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
   </div>
 
-  <div id="tab-settings" class="page active">
+  <div id="tab-settings" class="page">
     <div class="content">
       <div class="settings-section">
         <div class="settings-title">Scrydex (kaartdatabase + afbeeldingen)</div>
@@ -230,7 +559,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
             <input class="settings-input" type="password" id="scrydex-key" placeholder="Jouw Scrydex Primary Key">
             <div style="margin-top:8px;display:flex;gap:8px;align-items:center;">
               <button class="save-btn" onclick="saveScrydex()">Opslaan</button>
-              <span id="scrydex-status" style="font-size: 12px; color: rgb(72, 187, 120);">Opgeslagen ✓</span>
+              <span id="scrydex-status" style="font-size: 12px; color: rgb(72, 187, 120);">Ingesteld ✓</span>
             </div>
           </div>
         </div>
@@ -362,7 +691,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 </div>
 
-<div class="toast" id="toast">Scrydex API key opgeslagen</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const SK = 'pokevault_cards', SS = 'pokevault_settings';
@@ -372,14 +701,63 @@ let currentUser = 'Vincent';
 let chaseData = { Vincent:[], Skye:[] };
 let selCard = null, searchTimer = null;
 
-function load() {
+async function load() {
   try { cards = JSON.parse(localStorage.getItem(SK)||'[]'); } catch(e){ cards=[]; }
   try { const cd=JSON.parse(localStorage.getItem('pokevault_chase_v2')||'{}'); chaseData={Vincent:cd.Vincent||[],Skye:cd.Skye||(cd.Vincent?[]:[])}; } catch(e){ chaseData={Vincent:[],Skye:[]}; }
   try { cfg = {...cfg,...JSON.parse(localStorage.getItem(SS)||'{}')}; } catch(e){}
   applySettings();
+  // Try loading from Supabase (newer data from other devices)
+  if(cfg.sbUrl && cfg.sbKey) {
+    const loaded = await loadFromSupabase();
+    if(loaded) { updateStats(); renderCards(); renderChase(); showToast('Gesynchroniseerd met cloud ✓'); }
+  }
 }
-function saveCards() { localStorage.setItem(SK, JSON.stringify(cards)); }
-function saveChase() { localStorage.setItem('pokevault_chase_v2', JSON.stringify(chaseData)); }
+function saveCards() {
+  localStorage.setItem(SK, JSON.stringify(cards));
+  syncToSupabase();
+}
+function saveChase() {
+  localStorage.setItem('pokevault_chase_v2', JSON.stringify(chaseData));
+  syncToSupabase();
+}
+
+async function syncToSupabase() {
+  if(!cfg.sbUrl || !cfg.sbKey) return;
+  const payload = { id:'pokevault_main', user_id:'default', data: JSON.stringify({cards, chaseData}), list:'all' };
+  try {
+    await fetch(cfg.sbUrl+'/rest/v1/cards', {
+      method:'POST',
+      headers:{
+        'apikey': cfg.sbKey,
+        'Authorization': 'Bearer '+cfg.sbKey,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates'
+      },
+      body: JSON.stringify(payload)
+    });
+  } catch(e) { console.log('Supabase sync error:', e); }
+}
+
+async function loadFromSupabase() {
+  if(!cfg.sbUrl || !cfg.sbKey) return false;
+  try {
+    const r = await fetch(cfg.sbUrl+'/rest/v1/cards?id=eq.pokevault_main&select=data', {
+      headers:{
+        'apikey': cfg.sbKey,
+        'Authorization': 'Bearer '+cfg.sbKey
+      }
+    });
+    if(!r.ok) return false;
+    const rows = await r.json();
+    if(!rows.length) return false;
+    const d = JSON.parse(rows[0].data);
+    if(d.cards) cards = d.cards;
+    if(d.chaseData) chaseData = d.chaseData;
+    localStorage.setItem(SK, JSON.stringify(cards));
+    localStorage.setItem('pokevault_chase_v2', JSON.stringify(chaseData));
+    return true;
+  } catch(e) { console.log('Supabase load error:', e); return false; }
+}
 function getChaseCards() { return chaseData[currentUser]||[]; }
 function setChaseCards(arr) { chaseData[currentUser]=arr; }
 function saveCfg() { localStorage.setItem(SS, JSON.stringify(cfg)); }
@@ -402,7 +780,27 @@ function setStatus(id,txt,color){ const el=document.getElementById(id); el.textC
 function saveScrydex(){ cfg.scrydexKey=document.getElementById('scrydex-key').value.trim(); saveCfg(); setStatus('scrydex-status',cfg.scrydexKey?'Opgeslagen ✓':'Niet ingesteld',cfg.scrydexKey?'#48BB78':'var(--text-faint)'); const n=document.getElementById('no-key-notice'); if(n) n.style.display=cfg.scrydexKey?'none':'block'; if(cfg.scrydexKey) showToast('Scrydex API key opgeslagen'); }
 function saveEbay(){ cfg.ebayAppId=document.getElementById('ebay-key').value.trim(); saveCfg(); setStatus('ebay-status',cfg.ebayAppId?'Opgeslagen ✓':'Niet ingesteld',cfg.ebayAppId?'#48BB78':'var(--text-faint)'); if(cfg.ebayAppId) showToast('eBay App ID opgeslagen'); }
 function saveCurrency(){ cfg.currency=document.getElementById('currency').value; saveCfg(); renderCards(); }
-function saveSupabase(){ cfg.sbUrl=document.getElementById('sb-url').value.trim(); cfg.sbKey=document.getElementById('sb-key').value.trim(); saveCfg(); if(cfg.sbUrl&&cfg.sbKey){ setStatus('sb-status','Verbonden ✓','#48BB78'); showToast('Supabase opgeslagen'); } }
+function saveSupabase(){
+  cfg.sbUrl=document.getElementById('sb-url').value.trim();
+  cfg.sbKey=document.getElementById('sb-key').value.trim();
+  saveCfg();
+  if(cfg.sbUrl&&cfg.sbKey){
+    setStatus('sb-status','Verbinden…','#F6AD55');
+    loadFromSupabase().then(ok=>{
+      if(ok){
+        setStatus('sb-status','Verbonden ✓','#48BB78');
+        updateStats(); renderCards(); renderChase();
+        showToast('Verbonden! Data geladen uit cloud ✓');
+      } else {
+        // No data yet, push local data
+        syncToSupabase().then(()=>{
+          setStatus('sb-status','Verbonden ✓','#48BB78');
+          showToast('Verbonden! Lokale data opgeslagen in cloud ✓');
+        });
+      }
+    }).catch(()=>{ setStatus('sb-status','Fout — controleer URL/key','#E53E3E'); });
+  }
+}
 function saveCmFilters(){ cfg.cmCountries=document.getElementById('cm-countries').value; cfg.cmLanguage=document.getElementById('cm-language').value; cfg.cmCondition=document.getElementById('cm-condition').value; saveCfg(); showToast('Cardmarket filters opgeslagen'); renderCards(); }
 
 function switchTab(tab,btn){
@@ -599,7 +997,7 @@ function renderChase(){
   const list=document.getElementById('chase-list');
   if(!list) return;
   if(!f.length){
-    list.innerHTML=`<div class="empty"><div class="empty-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div><div class="empty-title">${allCards.length?'Geen resultaten':'Nog geen Chase Cards'}</div><div class="empty-sub">${allCards.length?'Probeer een andere zoekterm.':'Voeg kaarten toe via + Toevoegen → Chase Cards.'}</div></div>`;
+    list.innerHTML=`<div class="empty"><div class="empty-icon"></div><div class="empty-title">${allCards.length?'Geen resultaten':'Nog geen Chase Cards'}</div><div class="empty-sub">${allCards.length?'Probeer een andere zoekterm.':'Voeg kaarten toe via + Toevoegen → Chase Cards.'}</div></div>`;
     return;
   }
   const cur=cfg.currency||'EUR';
@@ -637,7 +1035,7 @@ function renderChase(){
           </div>
         </div>
         <div class="card-actions">
-          <button class="action-btn" style="color:white;font-weight:600;background:#48BB78;border-radius:6px;padding:6px 10px;" onclick="moveToCollection('${c.id}')">✓ Naar Collectie</button>
+          <button class="action-btn" style="color:white;font-weight:900;background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:8px;padding:6px 10px;box-shadow:0 2px 8px rgba(34,197,94,0.3);" onclick="moveToCollection('${c.id}')">✓ Naar Collectie</button>
           <button class="action-btn danger" onclick="deleteChase('${c.id}')">✕ Verwijder</button>
         </div>
       </div>`;
@@ -669,7 +1067,7 @@ function renderCards(){
     const meta=[c.number?`#${c.number}`:'',c.set].filter(Boolean).join(' · ');
     return `<div class="card-item">
       <div class="card-inner">
-        <div class="card-thumb">${c.imageSmall?`<img src="${c.imageSmall}" alt="${c.name}" loading="lazy">`:'<div class="card-thumb-ph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>'}</div>
+        <div class="card-thumb">${c.imageSmall?`<img src="${c.imageSmall}" alt="${c.name}" loading="lazy">`:'<div class="card-thumb-ph"></div>'}</div>
         <div class="card-body">
           <div class="card-name">${c.name}</div>
           ${meta?`<div class="card-meta">${meta}</div>`:''}
