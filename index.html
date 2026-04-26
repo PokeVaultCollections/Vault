@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/Vince/Downloads/pokemon-collection_57.html -->
+<!-- saved from url=(0059)file:///C:/Users/Vince/Downloads/pokemon-collection_42.html -->
 <html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="PokéVault">
+<meta name="apple-mobile-web-app-title" content="PokÃ©Vault">
 <meta name="theme-color" content="#0F1B31">
-<title>PokéVault</title>
+<title>PokÃ©Vault</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
@@ -262,12 +262,12 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
             <circle cx="14" cy="14" r="2" fill="#EEEEEE"></circle>
           </svg>
         </div>
-        <span class="logo-text">PokéVault</span>
+        <span class="logo-text">PokÃ©Vault</span>
       </div>
       <div class="header-stats">
         <span class="stat-pill"><strong id="total-cards">1</strong> collectie</span>
-        <span class="stat-pill"><strong id="total-chase">7</strong> chase</span>
-        <span class="stat-pill">€<strong id="total-value">0</strong></span>
+        <span class="stat-pill"><strong id="total-chase">1</strong> chase</span>
+        <span class="stat-pill">â¬<strong id="total-value">0</strong></span>
       </div>
       <div style="text-align:right;">
         <span id="sync-status" style="font-size:10px;font-weight:700;color:#48BB78;opacity:0;transition:opacity 0.5s;"></span>
@@ -284,11 +284,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
   <div id="tab-collection" class="page active">
     <div class="search-bar">
-      <input class="search-input" type="search" placeholder="Zoek in je collectie…" id="search-input" oninput="renderCards()">
+      <input class="search-input" type="search" placeholder="Zoek in je collectieâ¦" id="search-input" oninput="renderCards()">
     </div>
     <div style="padding:8px 12px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
-      <span style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;">▦ Kaarten</span>
-      <button id="sort-btn-collection" onclick="toggleSortMode(&#39;collection&#39;)" style="display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);">⇅ Volgorde</button>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;">&#9638; Kaarten</span>
+      <button id="sort-btn-collection" onclick="toggleSortMode('collection')" style="display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);">&#8645; Volgorde</button>
     </div>
     <div class="content"><div id="cards-list"><div class="card-grid"><div class="card-tile" onclick="openCardPopup(&#39;mog1hse4ddzdi1n0wjw&#39;)">
     <img class="card-tile-img" src="./index_files/large" alt="Team Rocket&#39;s Mewtwo ex" loading="lazy">
@@ -297,153 +297,59 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
         <div style="flex:1;min-width:0;">
           <div class="card-tile-name">Team Rocket's Mewtwo ex</div>
           <div class="card-tile-set">Ascended Heroes</div>
-          <div class="card-tile-rarity">Special Illustration Rare • #281</div>
+          <div class="card-tile-rarity">Special Illustration Rare â¢ #281</div>
         </div>
         <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn refresh" onclick="refreshCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">↻</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✎</button>
-          <button class="card-tile-btn del" onclick="deleteCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✕</button>
+          <button class="card-tile-btn refresh" onclick="refreshCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">â»</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">â</button>
+          <button class="card-tile-btn del" onclick="deleteCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">â</button>
         </div>
       </div>
-      <div class="card-tile-grade-row"><span class="card-tile-grade">ACE 10</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">€600.00</span></div>
+      <div class="card-tile-grade-row"><span class="card-tile-grade">ACE 10</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">â¬600.00</span></div>
     </div>
   </div></div></div></div>
   </div>
 
   <div id="tab-chase" class="page">
     <div class="search-bar" style="display:flex;gap:8px;align-items:center;">
-      <input class="search-input" type="search" placeholder="Zoek in Chase Cards…" id="chase-search-input" oninput="renderChase()" style="flex:1;">
+      <input class="search-input" type="search" placeholder="Zoek in Chase Cardsâ¦" id="chase-search-input" oninput="renderChase()" style="flex:1;">
     </div>
      <div style="display:flex;align-items:center;background:var(--surface);border-bottom:0.5px solid var(--border);">
-       <button id="user-btn-Vincent" class="user-tab active-user" onclick="switchUser(&#39;Vincent&#39;)">Vincent</button>
-       <button id="user-btn-Skye" class="user-tab" onclick="switchUser(&#39;Skye&#39;)">Skye</button>
-       <button id="sort-btn-chase" onclick="toggleSortMode(&#39;chase&#39;)" style="margin-left:auto;margin-right:10px;display:inline-flex;align-items:center;gap:4px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);white-space:nowrap;">⇅ Volgorde</button>
+       <button id="user-btn-Vincent" class="user-tab active-user" onclick="switchUser('Vincent')">Vincent</button>
+       <button id="user-btn-Skye" class="user-tab" onclick="switchUser('Skye')">Skye</button>
+       <button id="sort-btn-chase" onclick="toggleSortMode('chase')" style="margin-left:auto;margin-right:10px;display:inline-flex;align-items:center;gap:4px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);white-space:nowrap;">&#8645; Volgorde</button>
      </div>
     <div class="content"><div id="chase-list"><div class="pokemon-group">
       <div class="pokemon-group-header" onclick="toggleGroup(0)">
         <span class="pokemon-group-name">Dragonite</span>
-        <span class="pokemon-group-count">7 kaarten</span>
+        <span class="pokemon-group-count">1 kaart</span>
       </div>
-      <div class="pokemon-group-cards"><div class="card-grid"><div class="card-tile" onclick="openChasePopup(&#39;mog3to7wkqlhh90xp9a&#39;)">
-    <img class="card-tile-img" src="./index_files/191_hires.png" alt="Dragonite V" loading="lazy">
-    <div class="card-tile-body">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
-        <div style="flex:1;min-width:0;">
-          <div class="card-tile-name">Dragonite V</div>
-          <div class="card-tile-set">Evolving Skies</div>
-          <div class="card-tile-rarity">Rare Ultra • #191</div>
+      <div class="pokemon-group-cards"><div class="card-item" style="position:relative;">
+        <div class="quick-links">
+          <button class="ql-btn" style="color:#22c55e;background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.25);" onclick="moveToCollection(&#39;mofzr412tyag2vsk76e&#39;)" title="Naar Collectie">â</button>
+          <button class="ql-btn" onclick="editCard(&#39;mofzr412tyag2vsk76e&#39;)" title="Bewerken">â</button>
+          <button class="ql-btn danger" onclick="deleteChase(&#39;mofzr412tyag2vsk76e&#39;)" title="Verwijderen">â</button>
         </div>
-        <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3to7wkqlhh90xp9a&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3to7wkqlhh90xp9a&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3to7wkqlhh90xp9a&#39;)" title="Verwijderen">✕</button>
+        <div class="card-inner">
+          <div class="card-thumb"><img src="./index_files/small" alt="Mega Dragonite ex" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Mega Dragonite ex</div>
+            <div class="card-meta">#290 Â· Ascended Heroes</div>
+            <div class="price-grid">
+              <div class="price-cell"><div class="price-label">Raw</div><div class="price-value">â¬600.00</div></div>
+              <div class="price-cell"><div class="price-label">ACE 10</div><div class="price-value">â</div></div>
+              <div class="price-cell"><div class="price-label">PSA 10</div><div class="price-value">â</div></div>
+            </div>
+            <div class="card-links">
+              <a class="link-btn" href="https://www.ebay.nl/sch/i.html?_nkw=Mega%20Dragonite%20ex%20290&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay Raw</a>
+              <a class="link-btn" href="https://www.ebay.nl/sch/i.html?_nkw=Mega%20Dragonite%20ex%20290%20PSA%2010&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay PSA</a>
+              <a class="link-btn" href="https://www.ebay.nl/sch/i.html?_nkw=Mega%20Dragonite%20ex%20290%20ACE%2010&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay ACE</a>
+              <a class="link-btn" href="https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Mega+Dragonite+ex+290&amp;sellerCountry=2%2C23&amp;language=1&amp;minCondition=6" target="_blank">Cardmarket</a>
+              <a class="link-btn" href="https://www.pricecharting.com/search-products?q=Mega%20Dragonite%20ex%20290%20pokemon&amp;type=prices" target="_blank">Pricechart</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-tile-price">€10.00</div>
-    </div>
-  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3u6youkoy2f16z6&#39;)">
-    <img class="card-tile-img" src="./index_files/76_hires.png" alt="Dragonite V" loading="lazy">
-    <div class="card-tile-body">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
-        <div style="flex:1;min-width:0;">
-          <div class="card-tile-name">Dragonite V</div>
-          <div class="card-tile-set">Pokémon GO</div>
-          <div class="card-tile-rarity">Rare Ultra • #76</div>
-        </div>
-        <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3u6youkoy2f16z6&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3u6youkoy2f16z6&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3u6youkoy2f16z6&#39;)" title="Verwijderen">✕</button>
-        </div>
-      </div>
-      <div class="card-tile-price">€10.00</div>
-    </div>
-  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3uqqa70ni6bmt7w&#39;)">
-    <img class="card-tile-img" src="./index_files/67_hires.png" alt="Dragonite-GX" loading="lazy">
-    <div class="card-tile-body">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
-        <div style="flex:1;min-width:0;">
-          <div class="card-tile-name">Dragonite-GX</div>
-          <div class="card-tile-set">Dragon Majesty</div>
-          <div class="card-tile-rarity">Rare Ultra • #67</div>
-        </div>
-        <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3uqqa70ni6bmt7w&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3uqqa70ni6bmt7w&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3uqqa70ni6bmt7w&#39;)" title="Verwijderen">✕</button>
-        </div>
-      </div>
-      
-    </div>
-  </div><div class="card-tile" onclick="openChasePopup(&#39;mofzr412tyag2vsk76e&#39;)">
-    <img class="card-tile-img" src="./index_files/large(1)" alt="Mega Dragonite ex" loading="lazy">
-    <div class="card-tile-body">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
-        <div style="flex:1;min-width:0;">
-          <div class="card-tile-name">Mega Dragonite ex</div>
-          <div class="card-tile-set">Ascended Heroes</div>
-          <div class="card-tile-rarity">Special Illustration Rare • #290</div>
-        </div>
-        <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mofzr412tyag2vsk76e&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mofzr412tyag2vsk76e&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mofzr412tyag2vsk76e&#39;)" title="Verwijderen">✕</button>
-        </div>
-      </div>
-      <div class="card-tile-price">€600.00</div>
-    </div>
-  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3o7k6akg2nr3jhws&#39;)">
-    <img class="card-tile-img" src="./index_files/4_hires.png" alt="Dragonite" loading="lazy">
-    <div class="card-tile-body">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
-        <div style="flex:1;min-width:0;">
-          <div class="card-tile-name">Dragonite</div>
-          <div class="card-tile-set">Fossil</div>
-          <div class="card-tile-rarity">Rare Holo • #4</div>
-        </div>
-        <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3o7k6akg2nr3jhws&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3o7k6akg2nr3jhws&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3o7k6akg2nr3jhws&#39;)" title="Verwijderen">✕</button>
-        </div>
-      </div>
-      
-    </div>
-  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3y8l1qbvqhnnud69&#39;)">
-    <img class="card-tile-img" src="./index_files/19_hires.png" alt="Dragonite" loading="lazy">
-    <div class="card-tile-body">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
-        <div style="flex:1;min-width:0;">
-          <div class="card-tile-name">Dragonite</div>
-          <div class="card-tile-set">Fossil</div>
-          <div class="card-tile-rarity">Rare • #19</div>
-        </div>
-        <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3y8l1qbvqhnnud69&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3y8l1qbvqhnnud69&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3y8l1qbvqhnnud69&#39;)" title="Verwijderen">✕</button>
-        </div>
-      </div>
-      
-    </div>
-  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3wapc3wlbf14rkwg&#39;)">
-    <img class="card-tile-img" src="./index_files/large(2)" alt="Mega Dragonite ex" loading="lazy">
-    <div class="card-tile-body">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
-        <div style="flex:1;min-width:0;">
-          <div class="card-tile-name">Mega Dragonite ex</div>
-          <div class="card-tile-set">Ascended Heroes</div>
-          <div class="card-tile-rarity">Mega Hyper Rare • #295</div>
-        </div>
-        <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3wapc3wlbf14rkwg&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3wapc3wlbf14rkwg&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3wapc3wlbf14rkwg&#39;)" title="Verwijderen">✕</button>
-        </div>
-      </div>
-      
-    </div>
-  </div></div></div>
+      </div></div>
     </div></div></div>
   </div>
 
@@ -452,139 +358,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       <div id="no-key-notice" class="notice" style="display:none">Stel eerst je <strong>Scrydex API key</strong> in bij Instellingen om kaarten te zoeken.</div>
       <div id="search-section">
         <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">Zoek een kaart op naam:</p>
-        <input class="add-search-input" type="text" id="card-search" placeholder="bijv. Charizard, Pikachu, Riolu…" oninput="debounceSearch(this.value)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <input class="add-search-input" type="text" id="card-search" placeholder="bijv. Charizard, Pikachu, Rioluâ¦" oninput="debounceSearch(this.value)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
         <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center;">
-          <input class="add-search-input" type="text" id="set-search" placeholder="Set filteren (optioneel): bijv. Prismatic" oninput="debounceSearch(document.getElementById(&#39;card-search&#39;).value)" autocomplete="off" style="margin-bottom:0;font-size:13px;padding:8px 12px;">
+          <input class="add-search-input" type="text" id="set-search" placeholder="Set filteren (optioneel): bijv. Prismatic" oninput="debounceSearch(document.getElementById('card-search').value)" autocomplete="off" style="margin-bottom:0;font-size:13px;padding:8px 12px;">
         </div>
-        <div id="results-wrap"><div class="search-results"><div class="search-result-item" onclick="selectCardByIndex(0)">
-        <img class="result-img" src="./index_files/small" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Ascended Heroes · #112</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(1)">
-        <img class="result-img" src="./index_files/76.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Mega Evolution · #76</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(2)">
-        <img class="result-img" src="./index_files/50.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Prismatic Evolutions · #50</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(3)">
-        <img class="result-img" src="./index_files/81.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Stellar Crown · #81</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(4)">
-        <img class="result-img" src="./index_files/173.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Paldean Fates · #173</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(5)">
-        <img class="result-img" src="./index_files/215.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Scarlet &amp; Violet · #215</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(6)">
-        <img class="result-img" src="./index_files/113.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Scarlet &amp; Violet · #113</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(7)">
-        <img class="result-img" src="./index_files/112.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Scarlet &amp; Violet · #112</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(8)">
-        <img class="result-img" src="./index_files/71.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Crown Zenith · #71</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(9)">
-        <img class="result-img" src="./index_files/GG26.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Crown Zenith Galarian Gallery · #GG26</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(10)">
-        <img class="result-img" src="./index_files/78.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Brilliant Stars · #78</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(11)">
-        <img class="result-img" src="./index_files/90.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Vivid Voltage · #90</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(12)">
-        <img class="result-img" src="./index_files/SV21.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Hidden Fates Shiny Vault · #SV21</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(13)">
-        <img class="result-img" src="./index_files/116.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Unified Minds · #116</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(14)">
-        <img class="result-img" src="./index_files/115.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Unified Minds · #115</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(15)">
-        <img class="result-img" src="./index_files/102.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Unbroken Bonds · #102</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(16)">
-        <img class="result-img" src="./index_files/66.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Ultra Prism · #66</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(17)">
-        <img class="result-img" src="./index_files/70.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Burning Shadows · #70</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(18)">
-        <img class="result-img" src="./index_files/46.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Fates Collide · #46</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(19)">
-        <img class="result-img" src="./index_files/45.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Fates Collide · #45</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(20)">
-        <img class="result-img" src="./index_files/79.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Legendary Treasures · #79</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(21)">
-        <img class="result-img" src="./index_files/76(1).png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Plasma Storm · #76</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(22)">
-        <img class="result-img" src="./index_files/75.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Plasma Storm · #75</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(23)">
-        <img class="result-img" src="./index_files/63.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Next Destinies · #63</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(24)">
-        <img class="result-img" src="./index_files/BW33.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">BW Black Star Promos · #BW33</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(25)">
-        <img class="result-img" src="./index_files/50(1).png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Call of Legends · #50</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(26)">
-        <img class="result-img" src="./index_files/60.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">HS—Unleashed · #60</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(27)">
-        <img class="result-img" src="./index_files/91.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Platinum · #91</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(28)">
-        <img class="result-img" src="./index_files/16.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">POP Series 8 · #16</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(29)">
-        <img class="result-img" src="./index_files/117.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Legends Awakened · #117</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(30)">
-        <img class="result-img" src="./index_files/8.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">POP Series 6 · #8</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div><div class="search-result-item" onclick="selectCardByIndex(31)">
-        <img class="result-img" src="./index_files/61.png" alt="" loading="lazy">
-        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Diamond &amp; Pearl · #61</div></div>
-        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
-      </div></div></div>
+        <div id="results-wrap"></div>
       </div>
       <div id="selected-section" style="display:none">
         <div class="selected-card" id="selected-preview"></div>
@@ -605,24 +383,24 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
         <div class="form-section">Handmatige prijzen (optioneel)</div>
         <p class="form-hint">Laat leeg voor automatisch via eBay.</p>
         <div class="manual-prices">
-          <div class="mpf"><label>Raw (€)</label><input type="number" id="ap-raw" placeholder="0.00" step="0.01" min="0"></div>
-          <div class="mpf"><label>ACE 10 (€)</label><input type="number" id="ap-ace" placeholder="0.00" step="0.01" min="0"></div>
-          <div class="mpf"><label>PSA 10 (€)</label><input type="number" id="ap-psa" placeholder="0.00" step="0.01" min="0"></div>
+          <div class="mpf"><label>Raw (â¬)</label><input type="number" id="ap-raw" placeholder="0.00" step="0.01" min="0"></div>
+          <div class="mpf"><label>ACE 10 (â¬)</label><input type="number" id="ap-ace" placeholder="0.00" step="0.01" min="0"></div>
+          <div class="mpf"><label>PSA 10 (â¬)</label><input type="number" id="ap-psa" placeholder="0.00" step="0.01" min="0"></div>
         </div>
         <div class="form-section">Directe links (optioneel)</div>
         <div class="form-group">
           <label class="form-label">Cardmarket URL</label>
-          <input class="form-input" type="url" id="ap-cm" placeholder="https://www.cardmarket.com/…">
+          <input class="form-input" type="url" id="ap-cm" placeholder="https://www.cardmarket.com/â¦">
         </div>
         <div class="form-group">
           <label class="form-label">Pricechart URL</label>
-          <input class="form-input" type="url" id="ap-pc" placeholder="https://www.pricecharting.com/…">
+          <input class="form-input" type="url" id="ap-pc" placeholder="https://www.pricecharting.com/â¦">
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
   <button class="btn-primary" onclick="addSelectedCard(&#39;collection&#39;)" style="font-size:13px;padding:11px;">+ Collectie</button>
   <button class="btn-primary" onclick="addSelectedCard(&#39;chase&#39;)" style="font-size:13px;padding:11px;background:var(--purple);">+ Chase Cards</button>
 </div>
-        <button class="btn-secondary" onclick="clearSelected()">← Andere kaart kiezen</button>
+        <button class="btn-secondary" onclick="clearSelected()">â Andere kaart kiezen</button>
       </div>
     </div>
   </div>
@@ -633,11 +411,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
         <div class="settings-title">Scrydex (kaartdatabase + afbeeldingen)</div>
         <div class="settings-card">
           <div class="settings-row" style="flex-direction:column;align-items:flex-start;">
-            <div><div class="settings-row-label">API Key</div><div class="settings-row-sub">scrydex.com → Sign in → API Keys → Your Keys</div></div>
+            <div><div class="settings-row-label">API Key</div><div class="settings-row-sub">scrydex.com â Sign in â API Keys â Your Keys</div></div>
             <input class="settings-input" type="password" id="scrydex-key" placeholder="Jouw Scrydex Primary Key">
             <div style="margin-top:8px;display:flex;gap:8px;align-items:center;">
               <button class="save-btn" onclick="saveScrydex()">Opslaan</button>
-              <span id="scrydex-status" style="font-size: 12px; color: rgb(72, 187, 120);">Ingesteld ✓</span>
+              <span id="scrydex-status" style="font-size: 12px; color: rgb(72, 187, 120);">Ingesteld â</span>
             </div>
           </div>
         </div>
@@ -646,7 +424,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
         <div class="settings-title">eBay API (prijzen ophalen)</div>
         <div class="settings-card">
           <div class="settings-row" style="flex-direction:column;align-items:flex-start;">
-            <div><div class="settings-row-label">App ID</div><div class="settings-row-sub">developer.ebay.com — goedkeuring verwacht dinsdag</div></div>
+            <div><div class="settings-row-label">App ID</div><div class="settings-row-sub">developer.ebay.com â goedkeuring verwacht dinsdag</div></div>
             <input class="settings-input" type="text" id="ebay-key" placeholder="Jouw eBay App ID">
             <div style="margin-top:8px;display:flex;gap:8px;align-items:center;">
               <button class="save-btn" onclick="saveEbay()">Opslaan</button>
@@ -656,9 +434,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
           <div class="settings-row">
             <div><div class="settings-row-label">Valuta</div></div>
             <select class="form-input" id="currency" style="width:auto;padding:6px 10px;font-size:13px;" onchange="saveCurrency()">
-              <option value="EUR">EUR (€)</option>
+              <option value="EUR">EUR (â¬)</option>
               <option value="USD">USD ($)</option>
-              <option value="GBP">GBP (£)</option>
+              <option value="GBP">GBP (Â£)</option>
             </select>
           </div>
         </div>
@@ -717,11 +495,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
           </div>
           <div class="settings-row" style="flex-direction:column;align-items:flex-start;">
             <div><div class="settings-row-label">Anon Key</div></div>
-            <input class="settings-input" type="text" id="sb-key" placeholder="eyJhbGci…">
+            <input class="settings-input" type="text" id="sb-key" placeholder="eyJhbGciâ¦">
           </div>
           <div class="settings-row">
             <button class="save-btn" onclick="saveSupabase()">Verbinden</button>
-            <span id="sb-status" style="font-size: 12px; color: rgb(72, 187, 120);">Verbonden ✓</span>
+            <span id="sb-status" style="font-size: 12px; color: rgb(72, 187, 120);">Verbonden â</span>
           </div>
         </div>
       </div>
@@ -783,14 +561,14 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     <div class="modal-handle"></div>
     <div id="card-popup-content">
     <div class="card-popup-header">
-      <img class="card-popup-img" src="file:///C:/Users/Vince/Downloads/index_files/large" alt="Team Rocket&#39;s Mewtwo ex">
+      <img class="card-popup-img" src="./index_files/large" alt="Team Rocket&#39;s Mewtwo ex">
       <div style="flex:1;min-width:0;">
         <div class="card-popup-name">Team Rocket's Mewtwo ex</div>
         <div class="card-popup-meta">
-          Ascended Heroes • #281<br>
+          Ascended Heroes â¢ #281<br>
           Special Illustration Rare
         </div>
-        <div style="margin-top:8px;"><div class="card-tile-grade-row"><span class="card-tile-grade">ACE 10</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">€600.00</span></div></div>
+        <div style="margin-top:8px;"><div class="card-tile-grade-row"><span class="card-tile-grade">ACE 10</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">â¬600.00</span></div></div>
       </div>
     </div>
     <div class="card-popup-links">
@@ -801,9 +579,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       <a class="card-popup-link" href="https://www.pricecharting.com/search-products?q=Team%20Rocket%27s%20Mewtwo%20ex%20281%20pokemon&amp;type=prices" target="_blank" style="grid-column:span 2;">Pricechart</a>
     </div>
     <div class="card-popup-actions">
-      <button class="card-popup-action refresh" onclick="refreshCard(&#39;mog1hse4ddzdi1n0wjw&#39;);closeCardPopup()">↻ eBay verversen</button>
-      <button class="card-popup-action edit" onclick="closeCardPopup();editCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✎ Bewerken</button>
-      <button class="card-popup-action del" style="grid-column:span 2;" onclick="closeCardPopup();deleteCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✕ Verwijderen</button>
+      <button class="card-popup-action refresh" onclick="refreshCard(&#39;mog1hse4ddzdi1n0wjw&#39;);closeCardPopup()">â» eBay verversen</button>
+      <button class="card-popup-action edit" onclick="closeCardPopup();editCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">â Bewerken</button>
+      <button class="card-popup-action del" style="grid-column:span 2;" onclick="closeCardPopup();deleteCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">â Verwijderen</button>
     </div></div>
   </div>
 </div>
@@ -828,25 +606,25 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     <button class="add-copy-btn" onclick="addEditCopy()">+ Exemplaar toevoegen</button>
     <div class="form-section">Handmatige prijzen</div>
     <div class="manual-prices">
-      <div class="mpf"><label>Raw (€)</label><input type="number" id="ep-raw" placeholder="0.00" step="0.01" min="0"></div>
-      <div class="mpf"><label>ACE 10 (€)</label><input type="number" id="ep-ace" placeholder="0.00" step="0.01" min="0"></div>
-      <div class="mpf"><label>PSA 10 (€)</label><input type="number" id="ep-psa" placeholder="0.00" step="0.01" min="0"></div>
+      <div class="mpf"><label>Raw (â¬)</label><input type="number" id="ep-raw" placeholder="0.00" step="0.01" min="0"></div>
+      <div class="mpf"><label>ACE 10 (â¬)</label><input type="number" id="ep-ace" placeholder="0.00" step="0.01" min="0"></div>
+      <div class="mpf"><label>PSA 10 (â¬)</label><input type="number" id="ep-psa" placeholder="0.00" step="0.01" min="0"></div>
     </div>
     <div class="form-section">Directe links</div>
     <div class="form-group">
       <label class="form-label">Cardmarket URL</label>
-      <input class="form-input" type="url" id="ep-cm" placeholder="https://www.cardmarket.com/…">
+      <input class="form-input" type="url" id="ep-cm" placeholder="https://www.cardmarket.com/â¦">
     </div>
     <div class="form-group">
       <label class="form-label">Pricechart URL</label>
-      <input class="form-input" type="url" id="ep-pc" placeholder="https://www.pricecharting.com/…">
+      <input class="form-input" type="url" id="ep-pc" placeholder="https://www.pricecharting.com/â¦">
     </div>
     <button class="btn-primary" onclick="saveEdit()">Opslaan</button>
     <button class="btn-secondary" onclick="closeModal()">Annuleren</button>
   </div>
 </div>
 
-<div class="toast" id="toast">☁ Gesynchroniseerd!</div>
+<div class="toast" id="toast">â Gesynchroniseerd!</div>
 
 <script>
 const SK = 'pokevault_cards', SS = 'pokevault_settings';
@@ -869,7 +647,7 @@ function toggleSortMode(list) {
     const grid = document.getElementById('cards-list');
     if(sortModeCollection) {
       btn.classList.add('sort-mode-btn-active');
-      btn.textContent = '✓ Klaar';
+      btn.textContent = 'â Klaar';
       grid.classList.add('sort-mode-active');
     } else {
       btn.classList.remove('sort-mode-btn-active');
@@ -882,7 +660,7 @@ function toggleSortMode(list) {
     const btn = document.getElementById('sort-btn-chase');
     if(sortModeChase) {
       btn.classList.add('sort-mode-btn-active');
-      btn.textContent = '✓ Klaar';
+      btn.textContent = 'â Klaar';
     } else {
       btn.classList.remove('sort-mode-btn-active');
       btn.innerHTML = '&#8645; Volgorde';
@@ -1010,7 +788,7 @@ function renderCopies() {
   el.innerHTML = copies.map((c,i) =>
     `<div class="copy-entry">
       <span class="copy-entry-label">${c.label}</span>
-      <button class="copy-entry-remove" onclick="removeCopy(${i})">×</button>
+      <button class="copy-entry-remove" onclick="removeCopy(${i})">Ã</button>
     </div>`
   ).join('');
   // Update summary
@@ -1019,11 +797,11 @@ function renderCopies() {
     const aceItems = copies.filter(x=>x.type==='ace');
     const psaItems = copies.filter(x=>x.type==='psa');
     const parts = [];
-    if(rawCount) parts.push(`Raw ×${rawCount}`);
+    if(rawCount) parts.push(`Raw Ã${rawCount}`);
     if(aceItems.length) parts.push(aceItems.map(x=>`ACE ${x.grade}`).join(', '));
     if(psaItems.length) parts.push(psaItems.map(x=>`PSA ${x.grade}`).join(', '));
     summary.style.display = 'block';
-    summary.innerHTML = `<strong>Toe te voegen:</strong> ${parts.join(' · ')} <span style="color:var(--text-muted);font-weight:500;">(Qty: ${copies.length})</span>`;
+    summary.innerHTML = `<strong>Toe te voegen:</strong> ${parts.join(' Â· ')} <span style="color:var(--text-muted);font-weight:500;">(Qty: ${copies.length})</span>`;
   }
 }
 
@@ -1051,13 +829,13 @@ async function load() {
 
   // Then load from Supabase (cloud data overrides local)
   if(cfg.sbUrl && cfg.sbKey) {
-    showToast('Cloud laden…');
+    showToast('Cloud ladenâ¦');
     const loaded = await loadFromSupabase();
     if(loaded) {
       updateStats(); renderCards(); renderChase();
-      showToast('☁ Gesynchroniseerd!');
+      showToast('â Gesynchroniseerd!');
     } else {
-      // No cloud data yet — push local data to cloud
+      // No cloud data yet â push local data to cloud
       syncToSupabase();
     }
   }
@@ -1096,7 +874,7 @@ async function syncToSupabase() {
         body: JSON.stringify(payload)
       });
       if(r.ok) {
-        showSyncStatus('✓');
+        showSyncStatus('â');
       } else {
         const err = await r.text();
         console.log('Supabase sync error:', r.status, err);
@@ -1112,8 +890,8 @@ async function syncToSupabase() {
 function showSyncStatus(icon) {
   const el = document.getElementById('sync-status');
   if(!el) return;
-  el.textContent = icon === '✓' ? '☁ Gesynchroniseerd' : '☁ Sync mislukt';
-  el.style.color = icon === '✓' ? '#48BB78' : '#E53E3E';
+  el.textContent = icon === 'â' ? 'â Gesynchroniseerd' : 'â Sync mislukt';
+  el.style.color = icon === 'â' ? '#48BB78' : '#E53E3E';
   el.style.opacity = '1';
   setTimeout(() => { el.style.opacity = '0'; }, 3000);
 }
@@ -1153,11 +931,11 @@ function setChaseCards(arr) { chaseData[currentUser]=arr; }
 function saveCfg() { localStorage.setItem(SS, JSON.stringify(cfg)); }
 
 function applySettings() {
-  if(cfg.scrydexKey){ document.getElementById('scrydex-key').value=cfg.scrydexKey; setStatus('scrydex-status','Ingesteld ✓','#48BB78'); }
-  if(cfg.ebayAppId){ document.getElementById('ebay-key').value=cfg.ebayAppId; setStatus('ebay-status','Ingesteld ✓','#48BB78'); }
+  if(cfg.scrydexKey){ document.getElementById('scrydex-key').value=cfg.scrydexKey; setStatus('scrydex-status','Ingesteld â','#48BB78'); }
+  if(cfg.ebayAppId){ document.getElementById('ebay-key').value=cfg.ebayAppId; setStatus('ebay-status','Ingesteld â','#48BB78'); }
   if(cfg.sbUrl) document.getElementById('sb-url').value=cfg.sbUrl;
   if(cfg.sbKey) document.getElementById('sb-key').value=cfg.sbKey;
-  if(cfg.sbUrl&&cfg.sbKey) setStatus('sb-status','Verbonden ✓','#48BB78');
+  if(cfg.sbUrl&&cfg.sbKey) setStatus('sb-status','Verbonden â','#48BB78');
   document.getElementById('currency').value=cfg.currency||'EUR';
   if(document.getElementById('cm-countries')) document.getElementById('cm-countries').value=cfg.cmCountries||'2,23';
   if(document.getElementById('cm-language')) document.getElementById('cm-language').value=cfg.cmLanguage||'1';
@@ -1167,28 +945,28 @@ function applySettings() {
 }
 function setStatus(id,txt,color){ const el=document.getElementById(id); el.textContent=txt; el.style.color=color; }
 
-function saveScrydex(){ cfg.scrydexKey=document.getElementById('scrydex-key').value.trim(); saveCfg(); setStatus('scrydex-status',cfg.scrydexKey?'Opgeslagen ✓':'Niet ingesteld',cfg.scrydexKey?'#48BB78':'var(--text-faint)'); const n=document.getElementById('no-key-notice'); if(n) n.style.display=cfg.scrydexKey?'none':'block'; if(cfg.scrydexKey) showToast('Scrydex API key opgeslagen'); }
-function saveEbay(){ cfg.ebayAppId=document.getElementById('ebay-key').value.trim(); saveCfg(); setStatus('ebay-status',cfg.ebayAppId?'Opgeslagen ✓':'Niet ingesteld',cfg.ebayAppId?'#48BB78':'var(--text-faint)'); if(cfg.ebayAppId) showToast('eBay App ID opgeslagen'); }
+function saveScrydex(){ cfg.scrydexKey=document.getElementById('scrydex-key').value.trim(); saveCfg(); setStatus('scrydex-status',cfg.scrydexKey?'Opgeslagen â':'Niet ingesteld',cfg.scrydexKey?'#48BB78':'var(--text-faint)'); const n=document.getElementById('no-key-notice'); if(n) n.style.display=cfg.scrydexKey?'none':'block'; if(cfg.scrydexKey) showToast('Scrydex API key opgeslagen'); }
+function saveEbay(){ cfg.ebayAppId=document.getElementById('ebay-key').value.trim(); saveCfg(); setStatus('ebay-status',cfg.ebayAppId?'Opgeslagen â':'Niet ingesteld',cfg.ebayAppId?'#48BB78':'var(--text-faint)'); if(cfg.ebayAppId) showToast('eBay App ID opgeslagen'); }
 function saveCurrency(){ cfg.currency=document.getElementById('currency').value; saveCfg(); renderCards(); }
 function saveSupabase(){
   cfg.sbUrl=document.getElementById('sb-url').value.trim();
   cfg.sbKey=document.getElementById('sb-key').value.trim();
   saveCfg();
   if(cfg.sbUrl&&cfg.sbKey){
-    setStatus('sb-status','Verbinden…','#F6AD55');
+    setStatus('sb-status','Verbindenâ¦','#F6AD55');
     loadFromSupabase().then(ok=>{
       if(ok){
-        setStatus('sb-status','Verbonden ✓','#48BB78');
+        setStatus('sb-status','Verbonden â','#48BB78');
         updateStats(); renderCards(); renderChase();
-        showToast('Verbonden! Data geladen uit cloud ✓');
+        showToast('Verbonden! Data geladen uit cloud â');
       } else {
         // No data yet, push local data
         syncToSupabase().then(()=>{
-          setStatus('sb-status','Verbonden ✓','#48BB78');
-          showToast('Verbonden! Lokale data opgeslagen in cloud ✓');
+          setStatus('sb-status','Verbonden â','#48BB78');
+          showToast('Verbonden! Lokale data opgeslagen in cloud â');
         });
       }
-    }).catch(()=>{ setStatus('sb-status','Fout — controleer URL/key','#E53E3E'); });
+    }).catch(()=>{ setStatus('sb-status','Fout â controleer URL/key','#E53E3E'); });
   }
 }
 function saveCmFilters(){ cfg.cmCountries=document.getElementById('cm-countries').value; cfg.cmLanguage=document.getElementById('cm-language').value; cfg.cmCondition=document.getElementById('cm-condition').value; saveCfg(); showToast('Cardmarket filters opgeslagen'); renderCards(); }
@@ -1218,7 +996,7 @@ let searchResultCache = [];
 
 async function searchCards(q){
   if(!cfg.scrydexKey){ document.getElementById('results-wrap').innerHTML='<div class="search-status">Stel eerst je Scrydex API key in.</div>'; return; }
-  document.getElementById('results-wrap').innerHTML='<div class="search-status"><span class="spinner"></span>Zoeken…</div>';
+  document.getElementById('results-wrap').innerHTML='<div class="search-status"><span class="spinner"></span>Zoekenâ¦</div>';
   try {
     const qt=q.trim();
     const setFilter = (document.getElementById('set-search')?.value||'').trim();
@@ -1243,7 +1021,7 @@ async function searchCards(q){
       const img=c.images?.small||'';
       const setName=c.set?.name||'';
       const num=c.number||'';
-      const meta=[setName,num?`#${num}`:''].filter(Boolean).join(' · ');
+      const meta=[setName,num?`#${num}`:''].filter(Boolean).join(' Â· ');
       return `<div class="search-result-item" onclick="selectCardByIndex(${i})">
         ${img?`<img class="result-img" src="${img}" alt="" loading="lazy">`:'<div style="width:40px;height:56px;background:var(--bg);border-radius:4px;flex-shrink:0;"></div>'}
         <div class="result-info"><div class="result-name">${c.name}</div><div class="result-meta">${meta}</div></div>
@@ -1272,7 +1050,7 @@ function selectCard(c){
         </div>
       </div>
     </div>
-    <button class="deselect-btn" onclick="clearSelected()">← Andere kaart kiezen</button>`;
+    <button class="deselect-btn" onclick="clearSelected()">â Andere kaart kiezen</button>`;
   document.getElementById('search-section').style.display='none';
   document.getElementById('selected-section').style.display='block';
   ['ap-raw','ap-ace','ap-psa','ap-cm','ap-pc'].forEach(id=>document.getElementById(id).value='');
@@ -1336,11 +1114,11 @@ function cmUrl(card){
   const condition = cfg.cmCondition || '6';
   const filterStr = '?sellerCountry='+countries+'&language='+language+'&minCondition='+condition;
   if(card.cmUrl) {
-    // Direct product URL — append filters with ?
+    // Direct product URL â append filters with ?
     const base = card.cmUrl.split('?')[0];
     return base + filterStr;
   }
-  // Auto-generated search URL — include set for specificity
+  // Auto-generated search URL â include set for specificity
   const setName = (card.set||'').replace(/[^a-zA-Z0-9 ]/g,'').trim();
   const searchParts = [card.name, num, setName].filter(Boolean);
   const q = encodeURIComponent(searchParts.join(' '));
@@ -1367,7 +1145,7 @@ async function fetchEbay(cardId){
   card.lastUpdated=Date.now(); saveCards(); updateStats(); renderCards();
 }
 
-function fmt(v,cur){ if(v===null||v===undefined) return '—'; const s=cur==='USD'?'$':cur==='GBP'?'£':'€'; return s+v.toFixed(2); }
+function fmt(v,cur){ if(v===null||v===undefined) return 'â'; const s=cur==='USD'?'$':cur==='GBP'?'Â£':'â¬'; return s+v.toFixed(2); }
 
 function moveToCollection(id){
   const cc=getChaseCards();
@@ -1419,7 +1197,7 @@ function renderChase(){
   const list=document.getElementById('chase-list');
   if(!list) return;
   if(!f.length){
-    list.innerHTML=`<div class="empty"><div class="empty-icon"></div><div class="empty-title">${allCards.length?'Geen resultaten':'Nog geen Chase Cards'}</div><div class="empty-sub">${allCards.length?'Probeer een andere zoekterm.':'Voeg kaarten toe via + Toevoegen → Chase Cards.'}</div></div>`;
+    list.innerHTML=`<div class="empty"><div class="empty-icon"></div><div class="empty-title">${allCards.length?'Geen resultaten':'Nog geen Chase Cards'}</div><div class="empty-sub">${allCards.length?'Probeer een andere zoekterm.':'Voeg kaarten toe via + Toevoegen â Chase Cards.'}</div></div>`;
     return;
   }
   const cur=cfg.currency||'EUR';
@@ -1476,12 +1254,12 @@ function renderChaseTile(c, cur) {
         <div style="flex:1;min-width:0;">
           <div class="card-tile-name">${c.name}</div>
           <div class="card-tile-set">${c.set||''}</div>
-          ${c.rarity?`<div class="card-tile-rarity">${c.rarity}${num?' • #'+num:''}</div>`:''}
+          ${c.rarity?`<div class="card-tile-rarity">${c.rarity}${num?' â¢ #'+num:''}</div>`:''}
         </div>
         <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection('${c.id}')" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard('${c.id}')" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase('${c.id}')" title="Verwijderen">✕</button>
+          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection('${c.id}')" title="Naar Collectie">â</button>
+          <button class="card-tile-btn edit" onclick="editCard('${c.id}')" title="Bewerken">â</button>
+          <button class="card-tile-btn del" onclick="deleteChase('${c.id}')" title="Verwijderen">â</button>
         </div>
       </div>
       ${totalQty>0 ? gradeRows : (bestPrice!=null?`<div class="card-tile-price">${fmt(bestPrice,cur)}</div>`:'')}
@@ -1519,12 +1297,12 @@ function renderCardTile(c, cur) {
         <div style="flex:1;min-width:0;">
           <div class="card-tile-name">${c.name}</div>
           <div class="card-tile-set">${c.set||''}</div>
-          ${c.rarity?`<div class="card-tile-rarity">${c.rarity}${num?' • #'+num:''}</div>`:''}
+          ${c.rarity?`<div class="card-tile-rarity">${c.rarity}${num?' â¢ #'+num:''}</div>`:''}
         </div>
         <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn refresh" onclick="refreshCard('${c.id}')">↻</button>
-          <button class="card-tile-btn edit" onclick="editCard('${c.id}')">✎</button>
-          <button class="card-tile-btn del" onclick="deleteCard('${c.id}')">✕</button>
+          <button class="card-tile-btn refresh" onclick="refreshCard('${c.id}')">â»</button>
+          <button class="card-tile-btn edit" onclick="editCard('${c.id}')">â</button>
+          <button class="card-tile-btn del" onclick="deleteCard('${c.id}')">â</button>
         </div>
       </div>
       ${totalQty>0 ? gradeRows : (bestPrice!=null?`<div class="card-tile-price">${fmt(bestPrice,cur)}</div>`:'')}
@@ -1548,12 +1326,12 @@ function renderCards(){
     const as=(!c.priceAce&&c.ebayAce)?'<span style="font-size:9px;color:var(--text-faint)"> e</span>':'';
     const ps=(!c.pricePsa&&c.ebayPsa)?'<span style="font-size:9px;color:var(--text-faint)"> e</span>':'';
     const upd=c.lastUpdated?new Date(c.lastUpdated).toLocaleDateString('nl-NL',{day:'numeric',month:'short'}):'';
-    const meta=[c.number?`#${c.number}`:'',c.set].filter(Boolean).join(' · ');
+    const meta=[c.number?`#${c.number}`:'',c.set].filter(Boolean).join(' Â· ');
     return `<div class="card-item">
       <div class="quick-links">
-        <button class="ql-btn refresh" onclick="refreshCard('${c.id}')" title="eBay prijzen verversen">↻</button>
-        <button class="ql-btn" onclick="editCard('${c.id}')" title="Bewerken">✎</button>
-        <button class="ql-btn danger" onclick="deleteCard('${c.id}')" title="Verwijderen">✕</button>
+        <button class="ql-btn refresh" onclick="refreshCard('${c.id}')" title="eBay prijzen verversen">â»</button>
+        <button class="ql-btn" onclick="editCard('${c.id}')" title="Bewerken">â</button>
+        <button class="ql-btn danger" onclick="deleteCard('${c.id}')" title="Verwijderen">â</button>
       </div>
 
       <div class="card-inner">
@@ -1569,7 +1347,7 @@ function renderCards(){
             const hasAny=rawCount||aceGrades.length||psaGrades.length;
             return `<div class="price-grid">
               <div class="price-cell">
-                <div class="price-label">Raw${rawCount?` <span style="color:var(--yellow);font-size:9px;font-weight:900;">×${rawCount}</span>`:''}</div>
+                <div class="price-label">Raw${rawCount?` <span style="color:var(--yellow);font-size:9px;font-weight:900;">Ã${rawCount}</span>`:''}</div>
                 <div class="price-value">${fmt(rv,cur)}${rs}</div>
               </div>
               <div class="price-cell">
@@ -1597,7 +1375,7 @@ function renderCards(){
   }).join('');
 }
 
-function refreshCard(id){ if(!cfg.ebayAppId){ showToast('Stel eerst eBay App ID in'); return; } showToast('eBay prijzen ophalen…'); fetchEbay(id); }
+function refreshCard(id){ if(!cfg.ebayAppId){ showToast('Stel eerst eBay App ID in'); return; } showToast('eBay prijzen ophalenâ¦'); fetchEbay(id); }
 
 function editCard(id){
   // Check both collection and chase cards
@@ -1620,7 +1398,7 @@ function editCard(id){
   document.getElementById('ep-cm').value=c.cmUrl||'';
   document.getElementById('ep-pc').value=c.pcUrl||'';
   const ep=document.getElementById('edit-preview');
-  if(c.imageSmall){ ep.style.display='flex'; ep.innerHTML=`<img src="${c.imageSmall}" alt="${c.name}"><div><div class="name">${c.name}</div><div class="meta">${[c.number?'#'+c.number:'',c.set].filter(Boolean).join(' · ')}</div></div>`; }
+  if(c.imageSmall){ ep.style.display='flex'; ep.innerHTML=`<img src="${c.imageSmall}" alt="${c.name}"><div><div class="name">${c.name}</div><div class="meta">${[c.number?'#'+c.number:'',c.set].filter(Boolean).join(' Â· ')}</div></div>`; }
   else ep.style.display='none';
   document.getElementById('edit-modal').classList.add('open');
 }
@@ -1672,7 +1450,7 @@ function renderEditCopies() {
   el.innerHTML = editCopies.map((c,i) =>
     `<div class="copy-entry">
       <span class="copy-entry-label">${c.label}</span>
-      <button class="copy-entry-remove" onclick="removeEditCopy(${i})">×</button>
+      <button class="copy-entry-remove" onclick="removeEditCopy(${i})">Ã</button>
     </div>`
   ).join('');
 }
@@ -1725,7 +1503,7 @@ function openCardPopup(id) {
       <div style="flex:1;min-width:0;">
         <div class="card-popup-name">${c.name}</div>
         <div class="card-popup-meta">
-          ${c.set||''}${num?' • #'+num:''}<br>
+          ${c.set||''}${num?' â¢ #'+num:''}<br>
           ${c.rarity||''}
         </div>
         <div style="margin-top:8px;">${gradeRows||`<div class="card-tile-price">${fmt(c.priceRaw??c.ebayRaw,cur)}</div>`}</div>
@@ -1739,9 +1517,9 @@ function openCardPopup(id) {
       <a class="card-popup-link" href="${pcUrl(c)}" target="_blank" style="grid-column:span 2;">Pricechart</a>
     </div>
     <div class="card-popup-actions">
-      <button class="card-popup-action refresh" onclick="refreshCard('${c.id}');closeCardPopup()">↻ eBay verversen</button>
-      <button class="card-popup-action edit" onclick="closeCardPopup();editCard('${c.id}')">✎ Bewerken</button>
-      <button class="card-popup-action del" style="grid-column:span 2;" onclick="closeCardPopup();deleteCard('${c.id}')">✕ Verwijderen</button>
+      <button class="card-popup-action refresh" onclick="refreshCard('${c.id}');closeCardPopup()">â» eBay verversen</button>
+      <button class="card-popup-action edit" onclick="closeCardPopup();editCard('${c.id}')">â Bewerken</button>
+      <button class="card-popup-action del" style="grid-column:span 2;" onclick="closeCardPopup();deleteCard('${c.id}')">â Verwijderen</button>
     </div>`;
   document.getElementById('card-popup').classList.add('open');
 }
@@ -1770,7 +1548,7 @@ function openChasePopup(id) {
       ${c.imageLarge||c.imageSmall ? `<img class="card-popup-img" src="${c.imageLarge||c.imageSmall}" alt="${c.name}">` : ''}
       <div style="flex:1;min-width:0;">
         <div class="card-popup-name">${c.name}</div>
-        <div class="card-popup-meta">${c.set||''}${num?' • #'+num:''}<br>${c.rarity||''}</div>
+        <div class="card-popup-meta">${c.set||''}${num?' â¢ #'+num:''}<br>${c.rarity||''}</div>
         <div style="margin-top:8px;">${gradeRows}</div>
       </div>
     </div>
@@ -1782,9 +1560,9 @@ function openChasePopup(id) {
       <a class="card-popup-link" href="${pcUrl(c)}" target="_blank" style="grid-column:span 2;">Pricechart</a>
     </div>
     <div class="card-popup-actions">
-      <button class="card-popup-action" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;grid-column:span 2;" onclick="closeCardPopup();moveToCollection('${c.id}')">✓ Naar Collectie</button>
-      <button class="card-popup-action edit" onclick="closeCardPopup();editCard('${c.id}')">✎ Bewerken</button>
-      <button class="card-popup-action del" onclick="closeCardPopup();deleteChase('${c.id}')">✕ Verwijderen</button>
+      <button class="card-popup-action" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;grid-column:span 2;" onclick="closeCardPopup();moveToCollection('${c.id}')">â Naar Collectie</button>
+      <button class="card-popup-action edit" onclick="closeCardPopup();editCard('${c.id}')">â Bewerken</button>
+      <button class="card-popup-action del" onclick="closeCardPopup();deleteChase('${c.id}')">â Verwijderen</button>
     </div>`;
   document.getElementById('card-popup').classList.add('open');
 }
@@ -1835,7 +1613,7 @@ function updateStats(){
 }
 function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2500); }
 function exportData(){ const b=new Blob([JSON.stringify({cards,settings:{currency:cfg.currency}},null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='pokevault-export.json'; a.click(); }
-function importData(e){ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=ev=>{ try{ const d=JSON.parse(ev.target.result); if(d.cards&&Array.isArray(d.cards)){ cards=d.cards; saveCards(); updateStats(); renderCards(); showToast(`${cards.length} kaarten geïmporteerd`); } }catch(err){ showToast('Importfout'); } }; r.readAsText(f); }
+function importData(e){ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=ev=>{ try{ const d=JSON.parse(ev.target.result); if(d.cards&&Array.isArray(d.cards)){ cards=d.cards; saveCards(); updateStats(); renderCards(); showToast(`${cards.length} kaarten geÃ¯mporteerd`); } }catch(err){ showToast('Importfout'); } }; r.readAsText(f); }
 
 load(); updateStats(); renderCards(); renderChase();
 </script>
