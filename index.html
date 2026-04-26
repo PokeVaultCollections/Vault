@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/Vince/Downloads/pokemon-collection_54.html -->
+<!-- saved from url=(0059)file:///C:/Users/Vince/Downloads/pokemon-collection_56.html -->
 <html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -238,6 +238,13 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .toast.show { opacity: 1; }
 .spinner { display: inline-block; width: 13px; height: 13px; border: 2px solid var(--border-strong); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 4px; }
 @keyframes spin { to { transform: rotate(360deg); } }
+.sort-mode-active .card-tile { cursor: grab; }
+.sort-mode-active .card-tile:active { cursor: grabbing; }
+.card-tile.drag-over { opacity: 0.5; border: 2px dashed var(--blue); }
+.card-tile.dragging { opacity: 0.3; transform: scale(0.98); }
+.sort-mode-btn-active { background: var(--navy) !important; color: white !important; border-color: var(--navy) !important; }
+.chase-sort-bar { padding:8px 12px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;margin-bottom:4px; }
+
 .notice { background: rgba(47,110,186,0.08); border: 1px solid rgba(47,110,186,0.25); border-radius: var(--radius-sm); padding: 9px 11px; font-size: 12px; color: var(--blue); margin-bottom: 10px; line-height: 1.5; font-weight: 600; }
 </style>
 </head>
@@ -259,29 +266,29 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       <div class="header-stats">
         <span class="stat-pill"><strong id="total-cards">1</strong> collectie</span>
-        <span class="stat-pill"><strong id="total-chase">2</strong> chase</span>
+        <span class="stat-pill"><strong id="total-chase">7</strong> chase</span>
         <span class="stat-pill">€<strong id="total-value">0</strong></span>
       </div>
       <div style="text-align:right;">
-        <span id="sync-status" style="font-size:10px;font-weight:700;color:#48BB78;opacity:0;transition:opacity 0.5s;"></span>
+        <span id="sync-status" style="font-size: 10px; font-weight: 700; color: rgb(72, 187, 120); opacity: 0; transition: opacity 0.5s;">☁ Gesynchroniseerd</span>
       </div>
     </div>
   </div>
 
   <div class="tabs">
-    <button class="tab active" onclick="switchTab(&#39;collection&#39;,this)">Collectie</button>
-    <button class="tab" onclick="switchTab(&#39;chase&#39;,this)">Chase Cards</button>
+    <button class="tab" onclick="switchTab(&#39;collection&#39;,this)">Collectie</button>
+    <button class="tab active" onclick="switchTab(&#39;chase&#39;,this)">Chase Cards</button>
     <button class="tab" onclick="switchTab(&#39;add&#39;,this)">+ Toevoegen</button>
     <button class="tab" onclick="switchTab(&#39;settings&#39;,this)">Instellingen</button>
   </div>
 
-  <div id="tab-collection" class="page active">
+  <div id="tab-collection" class="page">
     <div class="search-bar">
       <input class="search-input" type="search" placeholder="Zoek in je collectie…" id="search-input" oninput="renderCards()">
     </div>
-    <div class="view-toggle">
-      <button class="view-btn" id="view-btn-list" onclick="setView(&#39;list&#39;)">☰ Lijst</button>
-      <button class="view-btn active" id="view-btn-grid" onclick="setView(&#39;grid&#39;)">⊞ Kaarten</button>
+    <div style="padding:8px 12px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <span style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;">▦ Kaarten</span>
+      <button id="sort-btn-collection" onclick="toggleSortMode(&#39;collection&#39;)" style="display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);">⇅ Volgorde</button>
     </div>
     <div class="content"><div id="cards-list"><div class="card-grid"><div class="card-tile" onclick="openCardPopup(&#39;mog1hse4ddzdi1n0wjw&#39;)">
     <img class="card-tile-img" src="./index_files/large" alt="Team Rocket&#39;s Mewtwo ex" loading="lazy">
@@ -303,20 +310,89 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   </div></div></div></div>
   </div>
 
-  <div id="tab-chase" class="page">
+  <div id="tab-chase" class="page active">
     <div class="search-bar" style="display:flex;gap:8px;align-items:center;">
       <input class="search-input" type="search" placeholder="Zoek in Chase Cards…" id="chase-search-input" oninput="renderChase()" style="flex:1;">
     </div>
-    <div style="display:flex;gap:0;background:var(--surface);border-bottom:0.5px solid var(--border);">
-      <button id="user-btn-Vincent" class="user-tab active-user" onclick="switchUser(&#39;Vincent&#39;)">Vincent</button>
-      <button id="user-btn-Skye" class="user-tab" onclick="switchUser(&#39;Skye&#39;)">Skye</button>
-    </div>
+     <div style="display:flex;align-items:center;background:var(--surface);border-bottom:0.5px solid var(--border);">
+       <button id="user-btn-Vincent" class="user-tab active-user" onclick="switchUser(&#39;Vincent&#39;)">Vincent</button>
+       <button id="user-btn-Skye" class="user-tab" onclick="switchUser(&#39;Skye&#39;)">Skye</button>
+       <button id="sort-btn-chase" onclick="toggleSortMode(&#39;chase&#39;)" style="margin-left:auto;margin-right:10px;display:inline-flex;align-items:center;gap:4px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);white-space:nowrap;" class="sort-mode-btn-active">✓ Klaar</button>
+     </div>
     <div class="content"><div id="chase-list"><div class="pokemon-group">
       <div class="pokemon-group-header" onclick="toggleGroup(0)">
         <span class="pokemon-group-name">Dragonite</span>
-        <span class="pokemon-group-count">2 kaarten</span>
+        <span class="pokemon-group-count">7 kaarten</span>
       </div>
-      <div class="pokemon-group-cards"><div class="card-grid"><div class="card-tile" onclick="openChasePopup(&#39;mog3o7k6akg2nr3jhws&#39;)">
+      <div class="pokemon-group-cards open"><div class="card-grid"><div class="card-tile" draggable="true" data-card-id="mog3to7wkqlhh90xp9a" ondragstart="onDragStart(event,&#39;mog3to7wkqlhh90xp9a&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3to7wkqlhh90xp9a&#39;)" ondrop="onDrop(event,&#39;mog3to7wkqlhh90xp9a&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+    <img class="card-tile-img" src="./index_files/191_hires.png" alt="Dragonite V" loading="lazy">
+    <div class="card-tile-body">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
+        <div style="flex:1;min-width:0;">
+          <div class="card-tile-name">Dragonite V</div>
+          <div class="card-tile-set">Evolving Skies</div>
+          <div class="card-tile-rarity">Rare Ultra • #191</div>
+        </div>
+        <div class="card-tile-btns" onclick="event.stopPropagation()">
+          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3to7wkqlhh90xp9a&#39;)" title="Naar Collectie">✓</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3to7wkqlhh90xp9a&#39;)" title="Bewerken">✎</button>
+          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3to7wkqlhh90xp9a&#39;)" title="Verwijderen">✕</button>
+        </div>
+      </div>
+      <div class="card-tile-price">€10.00</div>
+    </div>
+  </div><div class="card-tile" draggable="true" data-card-id="mog3u6youkoy2f16z6" ondragstart="onDragStart(event,&#39;mog3u6youkoy2f16z6&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3u6youkoy2f16z6&#39;)" ondrop="onDrop(event,&#39;mog3u6youkoy2f16z6&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+    <img class="card-tile-img" src="./index_files/76_hires.png" alt="Dragonite V" loading="lazy">
+    <div class="card-tile-body">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
+        <div style="flex:1;min-width:0;">
+          <div class="card-tile-name">Dragonite V</div>
+          <div class="card-tile-set">Pokémon GO</div>
+          <div class="card-tile-rarity">Rare Ultra • #76</div>
+        </div>
+        <div class="card-tile-btns" onclick="event.stopPropagation()">
+          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3u6youkoy2f16z6&#39;)" title="Naar Collectie">✓</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3u6youkoy2f16z6&#39;)" title="Bewerken">✎</button>
+          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3u6youkoy2f16z6&#39;)" title="Verwijderen">✕</button>
+        </div>
+      </div>
+      <div class="card-tile-price">€10.00</div>
+    </div>
+  </div><div class="card-tile" draggable="true" data-card-id="mog3uqqa70ni6bmt7w" ondragstart="onDragStart(event,&#39;mog3uqqa70ni6bmt7w&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3uqqa70ni6bmt7w&#39;)" ondrop="onDrop(event,&#39;mog3uqqa70ni6bmt7w&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+    <img class="card-tile-img" src="./index_files/67_hires.png" alt="Dragonite-GX" loading="lazy">
+    <div class="card-tile-body">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
+        <div style="flex:1;min-width:0;">
+          <div class="card-tile-name">Dragonite-GX</div>
+          <div class="card-tile-set">Dragon Majesty</div>
+          <div class="card-tile-rarity">Rare Ultra • #67</div>
+        </div>
+        <div class="card-tile-btns" onclick="event.stopPropagation()">
+          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3uqqa70ni6bmt7w&#39;)" title="Naar Collectie">✓</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3uqqa70ni6bmt7w&#39;)" title="Bewerken">✎</button>
+          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3uqqa70ni6bmt7w&#39;)" title="Verwijderen">✕</button>
+        </div>
+      </div>
+      
+    </div>
+  </div><div class="card-tile" draggable="true" data-card-id="mofzr412tyag2vsk76e" ondragstart="onDragStart(event,&#39;mofzr412tyag2vsk76e&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mofzr412tyag2vsk76e&#39;)" ondrop="onDrop(event,&#39;mofzr412tyag2vsk76e&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+    <img class="card-tile-img" src="./index_files/large(1)" alt="Mega Dragonite ex" loading="lazy">
+    <div class="card-tile-body">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
+        <div style="flex:1;min-width:0;">
+          <div class="card-tile-name">Mega Dragonite ex</div>
+          <div class="card-tile-set">Ascended Heroes</div>
+          <div class="card-tile-rarity">Special Illustration Rare • #290</div>
+        </div>
+        <div class="card-tile-btns" onclick="event.stopPropagation()">
+          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mofzr412tyag2vsk76e&#39;)" title="Naar Collectie">✓</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mofzr412tyag2vsk76e&#39;)" title="Bewerken">✎</button>
+          <button class="card-tile-btn del" onclick="deleteChase(&#39;mofzr412tyag2vsk76e&#39;)" title="Verwijderen">✕</button>
+        </div>
+      </div>
+      <div class="card-tile-price">€600.00</div>
+    </div>
+  </div><div class="card-tile" draggable="true" data-card-id="mog3o7k6akg2nr3jhws" ondragstart="onDragStart(event,&#39;mog3o7k6akg2nr3jhws&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3o7k6akg2nr3jhws&#39;)" ondrop="onDrop(event,&#39;mog3o7k6akg2nr3jhws&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
     <img class="card-tile-img" src="./index_files/4_hires.png" alt="Dragonite" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -333,22 +409,39 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       
     </div>
-  </div><div class="card-tile" onclick="openChasePopup(&#39;mofzr412tyag2vsk76e&#39;)">
-    <img class="card-tile-img" src="./index_files/large(1)" alt="Mega Dragonite ex" loading="lazy">
+  </div><div class="card-tile" draggable="true" data-card-id="mog3y8l1qbvqhnnud69" ondragstart="onDragStart(event,&#39;mog3y8l1qbvqhnnud69&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3y8l1qbvqhnnud69&#39;)" ondrop="onDrop(event,&#39;mog3y8l1qbvqhnnud69&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+    <img class="card-tile-img" src="./index_files/19_hires.png" alt="Dragonite" loading="lazy">
+    <div class="card-tile-body">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
+        <div style="flex:1;min-width:0;">
+          <div class="card-tile-name">Dragonite</div>
+          <div class="card-tile-set">Fossil</div>
+          <div class="card-tile-rarity">Rare • #19</div>
+        </div>
+        <div class="card-tile-btns" onclick="event.stopPropagation()">
+          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3y8l1qbvqhnnud69&#39;)" title="Naar Collectie">✓</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3y8l1qbvqhnnud69&#39;)" title="Bewerken">✎</button>
+          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3y8l1qbvqhnnud69&#39;)" title="Verwijderen">✕</button>
+        </div>
+      </div>
+      
+    </div>
+  </div><div class="card-tile" draggable="true" data-card-id="mog3wapc3wlbf14rkwg" ondragstart="onDragStart(event,&#39;mog3wapc3wlbf14rkwg&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3wapc3wlbf14rkwg&#39;)" ondrop="onDrop(event,&#39;mog3wapc3wlbf14rkwg&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+    <img class="card-tile-img" src="./index_files/large(2)" alt="Mega Dragonite ex" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
         <div style="flex:1;min-width:0;">
           <div class="card-tile-name">Mega Dragonite ex</div>
           <div class="card-tile-set">Ascended Heroes</div>
-          <div class="card-tile-rarity">Special Illustration Rare • #290</div>
+          <div class="card-tile-rarity">Mega Hyper Rare • #295</div>
         </div>
         <div class="card-tile-btns" onclick="event.stopPropagation()">
-          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mofzr412tyag2vsk76e&#39;)" title="Naar Collectie">✓</button>
-          <button class="card-tile-btn edit" onclick="editCard(&#39;mofzr412tyag2vsk76e&#39;)" title="Bewerken">✎</button>
-          <button class="card-tile-btn del" onclick="deleteChase(&#39;mofzr412tyag2vsk76e&#39;)" title="Verwijderen">✕</button>
+          <button class="card-tile-btn" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#16a34a;" onclick="moveToCollection(&#39;mog3wapc3wlbf14rkwg&#39;)" title="Naar Collectie">✓</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mog3wapc3wlbf14rkwg&#39;)" title="Bewerken">✎</button>
+          <button class="card-tile-btn del" onclick="deleteChase(&#39;mog3wapc3wlbf14rkwg&#39;)" title="Verwijderen">✕</button>
         </div>
       </div>
-      <div class="card-tile-price">€600.00</div>
+      
     </div>
   </div></div></div>
     </div></div></div>
@@ -599,6 +692,86 @@ let chaseData = { Vincent:[], Skye:[] };
 let selCard = null, searchTimer = null;
 
 let currentView = 'grid';
+let sortModeCollection = false;
+let sortModeChase = false;
+let dragSrcId = null;
+let dragList = null; // 'collection' or 'chase'
+
+function toggleSortMode(list) {
+  if(list === 'collection') {
+    sortModeCollection = !sortModeCollection;
+    const btn = document.getElementById('sort-btn-collection');
+    const grid = document.getElementById('cards-list');
+    if(sortModeCollection) {
+      btn.classList.add('sort-mode-btn-active');
+      btn.textContent = '✓ Klaar';
+      grid.classList.add('sort-mode-active');
+    } else {
+      btn.classList.remove('sort-mode-btn-active');
+      btn.innerHTML = '&#8645; Volgorde';
+      grid.classList.remove('sort-mode-active');
+    }
+    renderCards();
+  } else {
+    sortModeChase = !sortModeChase;
+    const btn = document.getElementById('sort-btn-chase');
+    if(sortModeChase) {
+      btn.classList.add('sort-mode-btn-active');
+      btn.textContent = '✓ Klaar';
+    } else {
+      btn.classList.remove('sort-mode-btn-active');
+      btn.innerHTML = '&#8645; Volgorde';
+    }
+    renderChase();
+  }
+}
+
+function onDragStart(e, id, list) {
+  dragSrcId = id;
+  dragList = list;
+  e.target.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+
+function onDragOver(e, id) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  document.querySelectorAll('.card-tile').forEach(el => el.classList.remove('drag-over'));
+  const el = document.querySelector(`[data-card-id="${id}"]`);
+  if(el) el.classList.add('drag-over');
+}
+
+function onDrop(e, targetId, list) {
+  e.preventDefault();
+  if(dragSrcId === targetId) return;
+  if(list === 'collection') {
+    const srcIdx = cards.findIndex(c => c.id === dragSrcId);
+    const tgtIdx = cards.findIndex(c => c.id === targetId);
+    if(srcIdx === -1 || tgtIdx === -1) return;
+    const [removed] = cards.splice(srcIdx, 1);
+    cards.splice(tgtIdx, 0, removed);
+    saveCards();
+    renderCards();
+  } else {
+    const cc = getChaseCards();
+    const srcIdx = cc.findIndex(c => c.id === dragSrcId);
+    const tgtIdx = cc.findIndex(c => c.id === targetId);
+    if(srcIdx === -1 || tgtIdx === -1) return;
+    const [removed] = cc.splice(srcIdx, 1);
+    cc.splice(tgtIdx, 0, removed);
+    setChaseCards(cc);
+    saveChase();
+    renderChase();
+  }
+  dragSrcId = null;
+}
+
+function onDragEnd(e) {
+  document.querySelectorAll('.card-tile').forEach(el => {
+    el.classList.remove('dragging');
+    el.classList.remove('drag-over');
+  });
+}
 
 function setView(v) {
   currentView = v;
@@ -1060,11 +1233,9 @@ function toggleGroup(idx){
 }
 
 function getBaseName(name){
-  // Strip common suffixes and prefixes to get base Pokemon name
   return name
-    .replace(/^(Mega |Shadow |Dark |Light |Rockets |Gym Leaders |[A-Z][a-z]+s )/,'')
-    .replace(/ (ex|EX|GX|V|VMAX|VSTAR|VStar|TAG TEAM|Prime|Break|BREAK)$/i,'')
-    .replace(/ (ex|EX|GX|V|VMAX|VSTAR)$/i,'')
+    .replace(/^(Mega |Shadow |Dark |Light |Rockets |Gym Leaders |[A-Z][a-z]+'s |[A-Z][a-z]+s )/,'')
+    .replace(/[ -](ex|EX|GX|V|VMAX|VSTAR|VStar|TAG TEAM|Prime|Break|BREAK|delta)$/i,'')
     .trim();
 }
 
@@ -1121,7 +1292,9 @@ function renderChaseTile(c, cur) {
 
   const bestPrice = pv??av??rv;
 
-  return `<div class="card-tile" onclick="openChasePopup('${c.id}')">
+  const cSortAttrs = sortModeChase ? `draggable="true" data-card-id="${c.id}" ondragstart="onDragStart(event,'${c.id}','chase')" ondragover="onDragOver(event,'${c.id}')" ondrop="onDrop(event,'${c.id}','chase')" ondragend="onDragEnd(event)"` : '';
+  const cClickAttr = sortModeChase ? '' : `onclick="openChasePopup('${c.id}')"`;
+  return `<div class="card-tile" ${cClickAttr} ${cSortAttrs}>
     ${c.imageLarge||c.imageSmall
       ? `<img class="card-tile-img" src="${c.imageLarge||c.imageSmall}" alt="${c.name}" loading="lazy">`
       : `<div class="card-tile-img-ph"></div>`}
@@ -1162,7 +1335,9 @@ function renderCardTile(c, cur) {
 
   const bestPrice = pv??av??rv;
 
-  return `<div class="card-tile" onclick="openCardPopup('${c.id}')">
+  const sortAttrs = sortModeCollection ? `draggable="true" data-card-id="${c.id}" ondragstart="onDragStart(event,'${c.id}','collection')" ondragover="onDragOver(event,'${c.id}')" ondrop="onDrop(event,'${c.id}','collection')" ondragend="onDragEnd(event)"` : '';
+  const clickAttr = sortModeCollection ? '' : `onclick="openCardPopup('${c.id}')"`;
+  return `<div class="card-tile" ${clickAttr} ${sortAttrs}>
     ${c.imageLarge||c.imageSmall
       ? `<img class="card-tile-img" src="${c.imageLarge||c.imageSmall}" alt="${c.name}" loading="lazy">`
       : `<div class="card-tile-img-ph"></div>`}
