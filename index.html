@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/Vince/Downloads/pokemon-collection_56.html -->
+<!-- saved from url=(0059)file:///C:/Users/Vince/Downloads/pokemon-collection_57.html -->
 <html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -270,15 +270,15 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
         <span class="stat-pill">€<strong id="total-value">0</strong></span>
       </div>
       <div style="text-align:right;">
-        <span id="sync-status" style="font-size: 10px; font-weight: 700; color: rgb(72, 187, 120); opacity: 0; transition: opacity 0.5s;">☁ Gesynchroniseerd</span>
+        <span id="sync-status" style="font-size:10px;font-weight:700;color:#48BB78;opacity:0;transition:opacity 0.5s;"></span>
       </div>
     </div>
   </div>
 
   <div class="tabs">
     <button class="tab" onclick="switchTab(&#39;collection&#39;,this)">Collectie</button>
-    <button class="tab active" onclick="switchTab(&#39;chase&#39;,this)">Chase Cards</button>
-    <button class="tab" onclick="switchTab(&#39;add&#39;,this)">+ Toevoegen</button>
+    <button class="tab" onclick="switchTab(&#39;chase&#39;,this)">Chase Cards</button>
+    <button class="tab active" onclick="switchTab(&#39;add&#39;,this)">+ Toevoegen</button>
     <button class="tab" onclick="switchTab(&#39;settings&#39;,this)">Instellingen</button>
   </div>
 
@@ -310,21 +310,21 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   </div></div></div></div>
   </div>
 
-  <div id="tab-chase" class="page active">
+  <div id="tab-chase" class="page">
     <div class="search-bar" style="display:flex;gap:8px;align-items:center;">
       <input class="search-input" type="search" placeholder="Zoek in Chase Cards…" id="chase-search-input" oninput="renderChase()" style="flex:1;">
     </div>
      <div style="display:flex;align-items:center;background:var(--surface);border-bottom:0.5px solid var(--border);">
        <button id="user-btn-Vincent" class="user-tab active-user" onclick="switchUser(&#39;Vincent&#39;)">Vincent</button>
        <button id="user-btn-Skye" class="user-tab" onclick="switchUser(&#39;Skye&#39;)">Skye</button>
-       <button id="sort-btn-chase" onclick="toggleSortMode(&#39;chase&#39;)" style="margin-left:auto;margin-right:10px;display:inline-flex;align-items:center;gap:4px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);white-space:nowrap;" class="sort-mode-btn-active">✓ Klaar</button>
+       <button id="sort-btn-chase" onclick="toggleSortMode(&#39;chase&#39;)" style="margin-left:auto;margin-right:10px;display:inline-flex;align-items:center;gap:4px;background:none;border:1px solid var(--border-strong);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text-muted);cursor:pointer;font-family:var(--font);white-space:nowrap;">⇅ Volgorde</button>
      </div>
     <div class="content"><div id="chase-list"><div class="pokemon-group">
       <div class="pokemon-group-header" onclick="toggleGroup(0)">
         <span class="pokemon-group-name">Dragonite</span>
         <span class="pokemon-group-count">7 kaarten</span>
       </div>
-      <div class="pokemon-group-cards open"><div class="card-grid"><div class="card-tile" draggable="true" data-card-id="mog3to7wkqlhh90xp9a" ondragstart="onDragStart(event,&#39;mog3to7wkqlhh90xp9a&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3to7wkqlhh90xp9a&#39;)" ondrop="onDrop(event,&#39;mog3to7wkqlhh90xp9a&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+      <div class="pokemon-group-cards"><div class="card-grid"><div class="card-tile" onclick="openChasePopup(&#39;mog3to7wkqlhh90xp9a&#39;)">
     <img class="card-tile-img" src="./index_files/191_hires.png" alt="Dragonite V" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -341,7 +341,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       <div class="card-tile-price">€10.00</div>
     </div>
-  </div><div class="card-tile" draggable="true" data-card-id="mog3u6youkoy2f16z6" ondragstart="onDragStart(event,&#39;mog3u6youkoy2f16z6&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3u6youkoy2f16z6&#39;)" ondrop="onDrop(event,&#39;mog3u6youkoy2f16z6&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3u6youkoy2f16z6&#39;)">
     <img class="card-tile-img" src="./index_files/76_hires.png" alt="Dragonite V" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -358,7 +358,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       <div class="card-tile-price">€10.00</div>
     </div>
-  </div><div class="card-tile" draggable="true" data-card-id="mog3uqqa70ni6bmt7w" ondragstart="onDragStart(event,&#39;mog3uqqa70ni6bmt7w&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3uqqa70ni6bmt7w&#39;)" ondrop="onDrop(event,&#39;mog3uqqa70ni6bmt7w&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3uqqa70ni6bmt7w&#39;)">
     <img class="card-tile-img" src="./index_files/67_hires.png" alt="Dragonite-GX" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -375,7 +375,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       
     </div>
-  </div><div class="card-tile" draggable="true" data-card-id="mofzr412tyag2vsk76e" ondragstart="onDragStart(event,&#39;mofzr412tyag2vsk76e&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mofzr412tyag2vsk76e&#39;)" ondrop="onDrop(event,&#39;mofzr412tyag2vsk76e&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+  </div><div class="card-tile" onclick="openChasePopup(&#39;mofzr412tyag2vsk76e&#39;)">
     <img class="card-tile-img" src="./index_files/large(1)" alt="Mega Dragonite ex" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -392,7 +392,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       <div class="card-tile-price">€600.00</div>
     </div>
-  </div><div class="card-tile" draggable="true" data-card-id="mog3o7k6akg2nr3jhws" ondragstart="onDragStart(event,&#39;mog3o7k6akg2nr3jhws&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3o7k6akg2nr3jhws&#39;)" ondrop="onDrop(event,&#39;mog3o7k6akg2nr3jhws&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3o7k6akg2nr3jhws&#39;)">
     <img class="card-tile-img" src="./index_files/4_hires.png" alt="Dragonite" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -409,7 +409,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       
     </div>
-  </div><div class="card-tile" draggable="true" data-card-id="mog3y8l1qbvqhnnud69" ondragstart="onDragStart(event,&#39;mog3y8l1qbvqhnnud69&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3y8l1qbvqhnnud69&#39;)" ondrop="onDrop(event,&#39;mog3y8l1qbvqhnnud69&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3y8l1qbvqhnnud69&#39;)">
     <img class="card-tile-img" src="./index_files/19_hires.png" alt="Dragonite" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -426,7 +426,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
       </div>
       
     </div>
-  </div><div class="card-tile" draggable="true" data-card-id="mog3wapc3wlbf14rkwg" ondragstart="onDragStart(event,&#39;mog3wapc3wlbf14rkwg&#39;,&#39;chase&#39;)" ondragover="onDragOver(event,&#39;mog3wapc3wlbf14rkwg&#39;)" ondrop="onDrop(event,&#39;mog3wapc3wlbf14rkwg&#39;,&#39;chase&#39;)" ondragend="onDragEnd(event)">
+  </div><div class="card-tile" onclick="openChasePopup(&#39;mog3wapc3wlbf14rkwg&#39;)">
     <img class="card-tile-img" src="./index_files/large(2)" alt="Mega Dragonite ex" loading="lazy">
     <div class="card-tile-body">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
@@ -447,13 +447,144 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     </div></div></div>
   </div>
 
-  <div id="tab-add" class="page">
+  <div id="tab-add" class="page active">
     <div class="content">
       <div id="no-key-notice" class="notice" style="display:none">Stel eerst je <strong>Scrydex API key</strong> in bij Instellingen om kaarten te zoeken.</div>
       <div id="search-section">
         <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">Zoek een kaart op naam:</p>
-        <input class="add-search-input" type="text" id="card-search" placeholder="bijv. Charizard, Pikachu, Mewtwo…" oninput="debounceSearch(this.value)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-        <div id="results-wrap"></div>
+        <input class="add-search-input" type="text" id="card-search" placeholder="bijv. Charizard, Pikachu, Riolu…" oninput="debounceSearch(this.value)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center;">
+          <input class="add-search-input" type="text" id="set-search" placeholder="Set filteren (optioneel): bijv. Prismatic" oninput="debounceSearch(document.getElementById(&#39;card-search&#39;).value)" autocomplete="off" style="margin-bottom:0;font-size:13px;padding:8px 12px;">
+        </div>
+        <div id="results-wrap"><div class="search-results"><div class="search-result-item" onclick="selectCardByIndex(0)">
+        <img class="result-img" src="./index_files/small" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Ascended Heroes · #112</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(1)">
+        <img class="result-img" src="./index_files/76.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Mega Evolution · #76</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(2)">
+        <img class="result-img" src="./index_files/50.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Prismatic Evolutions · #50</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(3)">
+        <img class="result-img" src="./index_files/81.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Stellar Crown · #81</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(4)">
+        <img class="result-img" src="./index_files/173.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Paldean Fates · #173</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(5)">
+        <img class="result-img" src="./index_files/215.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Scarlet &amp; Violet · #215</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(6)">
+        <img class="result-img" src="./index_files/113.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Scarlet &amp; Violet · #113</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(7)">
+        <img class="result-img" src="./index_files/112.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Scarlet &amp; Violet · #112</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(8)">
+        <img class="result-img" src="./index_files/71.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Crown Zenith · #71</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(9)">
+        <img class="result-img" src="./index_files/GG26.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Crown Zenith Galarian Gallery · #GG26</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(10)">
+        <img class="result-img" src="./index_files/78.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Brilliant Stars · #78</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(11)">
+        <img class="result-img" src="./index_files/90.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Vivid Voltage · #90</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(12)">
+        <img class="result-img" src="./index_files/SV21.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Hidden Fates Shiny Vault · #SV21</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(13)">
+        <img class="result-img" src="./index_files/116.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Unified Minds · #116</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(14)">
+        <img class="result-img" src="./index_files/115.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Unified Minds · #115</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(15)">
+        <img class="result-img" src="./index_files/102.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Unbroken Bonds · #102</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(16)">
+        <img class="result-img" src="./index_files/66.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Ultra Prism · #66</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(17)">
+        <img class="result-img" src="./index_files/70.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Burning Shadows · #70</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(18)">
+        <img class="result-img" src="./index_files/46.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Fates Collide · #46</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(19)">
+        <img class="result-img" src="./index_files/45.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Fates Collide · #45</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(20)">
+        <img class="result-img" src="./index_files/79.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Legendary Treasures · #79</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(21)">
+        <img class="result-img" src="./index_files/76(1).png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Plasma Storm · #76</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(22)">
+        <img class="result-img" src="./index_files/75.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Plasma Storm · #75</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(23)">
+        <img class="result-img" src="./index_files/63.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Next Destinies · #63</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(24)">
+        <img class="result-img" src="./index_files/BW33.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">BW Black Star Promos · #BW33</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(25)">
+        <img class="result-img" src="./index_files/50(1).png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Call of Legends · #50</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(26)">
+        <img class="result-img" src="./index_files/60.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">HS—Unleashed · #60</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(27)">
+        <img class="result-img" src="./index_files/91.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Platinum · #91</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(28)">
+        <img class="result-img" src="./index_files/16.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">POP Series 8 · #16</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(29)">
+        <img class="result-img" src="./index_files/117.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Legends Awakened · #117</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(30)">
+        <img class="result-img" src="./index_files/8.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">POP Series 6 · #8</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div><div class="search-result-item" onclick="selectCardByIndex(31)">
+        <img class="result-img" src="./index_files/61.png" alt="" loading="lazy">
+        <div class="result-info"><div class="result-name">Riolu</div><div class="result-meta">Diamond &amp; Pearl · #61</div></div>
+        <div class="result-add"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+      </div></div></div>
       </div>
       <div id="selected-section" style="display:none">
         <div class="selected-card" id="selected-preview"></div>
@@ -609,6 +740,40 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Manual Add Modal -->
+<div class="modal-overlay" id="manual-modal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <p class="modal-title">Handmatig toevoegen</p>
+    <p class="form-hint" style="margin-bottom:12px;">Kaart niet gevonden in de database? Vul hier de gegevens handmatig in.</p>
+    <div class="form-group">
+      <label class="form-label">Naam *</label>
+      <input class="form-input" type="text" id="m-name" placeholder="bijv. Riolu">
+    </div>
+    <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="form-group">
+        <label class="form-label">Nummer</label>
+        <input class="form-input" type="text" id="m-number" placeholder="bijv. 050">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Set</label>
+        <input class="form-input" type="text" id="m-set" placeholder="bijv. Prismatic Evolutions">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Rarity</label>
+      <input class="form-input" type="text" id="m-rarity" placeholder="bijv. Common">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Afbeelding URL (optioneel)</label>
+      <input class="form-input" type="url" id="m-image" placeholder="https://...">
+      <p class="form-hint">Zoek de kaart op via Google Images en plak de URL.</p>
+    </div>
+    <button class="btn-primary" onclick="confirmManualAdd()">Kaart selecteren</button>
+    <button class="btn-secondary" onclick="closeManualModal()">Annuleren</button>
   </div>
 </div>
 
@@ -1056,7 +1221,10 @@ async function searchCards(q){
   document.getElementById('results-wrap').innerHTML='<div class="search-status"><span class="spinner"></span>Zoeken…</div>';
   try {
     const qt=q.trim();
-    const url='https://api.pokemontcg.io/v2/cards?q=' + encodeURIComponent('name:"' + qt + '"') + '&pageSize=20&select=id,name,number,set,images,rarity,artist';
+    const setFilter = (document.getElementById('set-search')?.value||'').trim();
+    let qStr = 'name:"' + qt + '"';
+    if(setFilter) qStr += ' set.name:*' + setFilter + '*';
+     const url='https://api.pokemontcg.io/v2/cards?q=' + encodeURIComponent(qStr) + '&pageSize=250&orderBy=-set.releaseDate&select=id,name,number,set,images,rarity,artist';
     const r=await fetch(url, {headers:{'X-Api-Key':cfg.scrydexKey}});
     if(!r.ok){
       const errText=await r.text();
@@ -1067,7 +1235,10 @@ async function searchCards(q){
     const d=await r.json();
     const items=d.data||[];
     searchResultCache = items;
-    if(!items.length){ document.getElementById('results-wrap').innerHTML='<div class="search-status">Geen kaarten gevonden.</div>'; return; }
+    if(!items.length){
+      document.getElementById('results-wrap').innerHTML=`<div class="search-status">Geen kaarten gevonden in de database.<br><button onclick="openManualAdd('${q.trim()}')" style="margin-top:8px;padding:8px 16px;background:var(--navy);color:white;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font);">+ Handmatig toevoegen</button></div>`;
+      return;
+    }
     const html=items.map((c,i)=>{
       const img=c.images?.small||'';
       const setName=c.set?.name||'';
@@ -1169,8 +1340,10 @@ function cmUrl(card){
     const base = card.cmUrl.split('?')[0];
     return base + filterStr;
   }
-  // Auto-generated search URL
-  const q = encodeURIComponent(card.name+(num?' '+num:''));
+  // Auto-generated search URL — include set for specificity
+  const setName = (card.set||'').replace(/[^a-zA-Z0-9 ]/g,'').trim();
+  const searchParts = [card.name, num, setName].filter(Boolean);
+  const q = encodeURIComponent(searchParts.join(' '));
   return 'https://www.cardmarket.com/en/Pokemon/Products/Search?searchString='+q
     +'&sellerCountry='+countries
     +'&language='+language
@@ -1620,9 +1793,39 @@ function closeCardPopup() {
   document.getElementById('card-popup').classList.remove('open');
 }
 
+function openManualAdd(prefill) {
+  document.getElementById('m-name').value = prefill || '';
+  document.getElementById('m-number').value = '';
+  document.getElementById('m-set').value = '';
+  document.getElementById('m-rarity').value = '';
+  document.getElementById('m-image').value = '';
+  document.getElementById('manual-modal').classList.add('open');
+}
+
+function closeManualModal() {
+  document.getElementById('manual-modal').classList.remove('open');
+}
+
+function confirmManualAdd() {
+  const name = document.getElementById('m-name').value.trim();
+  if(!name) { showToast('Vul een naam in'); return; }
+  const img = document.getElementById('m-image').value.trim();
+  const fakeCard = {
+    id: 'manual-'+Date.now(),
+    name,
+    number: document.getElementById('m-number').value.trim(),
+    set: { name: document.getElementById('m-set').value.trim() },
+    rarity: document.getElementById('m-rarity').value.trim(),
+    images: { small: img, large: img }
+  };
+  closeManualModal();
+  selectCard(fakeCard);
+}
+
 function closeModal(){ document.getElementById('edit-modal').classList.remove('open'); }
 document.getElementById('edit-modal').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
 document.getElementById('card-popup').addEventListener('click',function(e){ if(e.target===this) closeCardPopup(); });
+document.getElementById('manual-modal').addEventListener('click',function(e){ if(e.target===this) closeManualModal(); });
 
 function updateStats(){
   document.getElementById('total-cards').textContent=cards.length;
