@@ -276,13 +276,13 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   </div>
 
   <div class="tabs">
-    <button class="tab" onclick="switchTab(&#39;collection&#39;,this)">Collectie</button>
+    <button class="tab active" onclick="switchTab(&#39;collection&#39;,this)">Collectie</button>
     <button class="tab" onclick="switchTab(&#39;chase&#39;,this)">Chase Cards</button>
-    <button class="tab active" onclick="switchTab(&#39;add&#39;,this)">+ Toevoegen</button>
+    <button class="tab" onclick="switchTab(&#39;add&#39;,this)">+ Toevoegen</button>
     <button class="tab" onclick="switchTab(&#39;settings&#39;,this)">Instellingen</button>
   </div>
 
-  <div id="tab-collection" class="page">
+  <div id="tab-collection" class="page active">
     <div class="search-bar">
       <input class="search-input" type="search" placeholder="Zoek in je collectie…" id="search-input" oninput="renderCards()">
     </div>
@@ -447,7 +447,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     </div></div></div>
   </div>
 
-  <div id="tab-add" class="page active">
+  <div id="tab-add" class="page">
     <div class="content">
       <div id="no-key-notice" class="notice" style="display:none">Stel eerst je <strong>Scrydex API key</strong> in bij Instellingen om kaarten te zoeken.</div>
       <div id="search-section">
