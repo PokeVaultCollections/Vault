@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/Vince/Downloads/pokemon-collection_1.html -->
+<!-- saved from url=(0058)file:///C:/Users/Vince/Downloads/pokemon-collection_2.html -->
 <html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -695,7 +695,7 @@ body {
 
 <script>
 const SK = 'pokevault_cards', SS = 'pokevault_settings';
-let cards = [], cfg = { scrydexKey:'', ebayAppId:'', currency:'EUR', sbUrl:'', sbKey:'', cmCountries:'2,23', cmLanguage:'1', cmCondition:'6' };
+let cards = [], cfg = { scrydexKey:'3ac5e7daacc3c5cf4d99942f8f88714a124e84d28dc887e4b92074fded0c555c', ebayAppId:'', currency:'EUR', sbUrl:'https://khounhyuquxxdyybpzvi.supabase.co', sbKey:'sb_publishable_fUTX6W3TmR9NXN83PSfq6A_ApSrkBSR', cmCountries:'2,23', cmLanguage:'1', cmCondition:'6' };
 const USERS = ['Vincent','Skye'];
 let currentUser = 'Vincent';
 let chaseData = { Vincent:[], Skye:[] };
@@ -704,7 +704,11 @@ let selCard = null, searchTimer = null;
 async function load() {
   try { cards = JSON.parse(localStorage.getItem(SK)||'[]'); } catch(e){ cards=[]; }
   try { const cd=JSON.parse(localStorage.getItem('pokevault_chase_v2')||'{}'); chaseData={Vincent:cd.Vincent||[],Skye:cd.Skye||(cd.Vincent?[]:[])}; } catch(e){ chaseData={Vincent:[],Skye:[]}; }
-  try { cfg = {...cfg,...JSON.parse(localStorage.getItem(SS)||'{}')}; } catch(e){}
+  try {
+    const saved = JSON.parse(localStorage.getItem(SS)||'{}');
+    // Only override defaults if saved value is non-empty
+    Object.keys(saved).forEach(k => { if(saved[k] !== '' && saved[k] !== null) cfg[k] = saved[k]; });
+  } catch(e){}
   applySettings();
   // Try loading from Supabase (newer data from other devices)
   if(cfg.sbUrl && cfg.sbKey) {
