@@ -1,476 +1,244 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/Vince/Downloads/pokemon-collection_9.html -->
+<!-- saved from url=(0059)file:///C:/Users/Vince/Downloads/pokemon-collection_42.html -->
 <html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="PokéVault">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0F1B31">
 <title>PokéVault</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 :root {
-  --red: #E3350D;
-  --red-dark: #B5280A;
-  --red-glow: rgba(227,53,13,0.3);
-  --yellow: #FFCB05;
-  --yellow-dark: #C9A000;
-  --blue: #3B5EA6;
-  --bg: #0F0F1A;
-  --bg2: #171728;
-  --bg3: #1E1E30;
-  --surface: #1A1A2E;
-  --surface2: #22223A;
-  --border: rgba(255,255,255,0.06);
-  --border-strong: rgba(255,255,255,0.12);
-  --text: #F0F0F5;
-  --text-muted: #8888AA;
-  --text-faint: #55557A;
-  --radius: 16px;
-  --radius-sm: 10px;
-  --font: 'Nunito', -apple-system, sans-serif;
+  --navy: #1B2A4A;
+  --navy-dark: #0F1B31;
+  --navy-light: #243558;
+  --blue: #2F6EBA;
+  --blue-light: #4A8FD4;
+  --blue-pale: rgba(47,110,186,0.15);
+  --bg: #F0F2F5;
+  --surface: #FFFFFF;
+  --surface2: #F7F9FC;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.15);
+  --text: #1A1A2E;
+  --text-muted: #5A6A85;
+  --text-faint: #9AAABF;
+  --text-on-navy: #E8EDF5;
+  --text-muted-navy: #8FA4C0;
+  --accent: #2F6EBA;
+  --accent-glow: rgba(47,110,186,0.2);
+  --green: #2E7D32;
+  --green-light: rgba(46,125,50,0.12);
+  --radius: 6px;
+  --radius-sm: 4px;
+  --font: 'Inter', -apple-system, sans-serif;
 }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100dvh;
-  overflow-x: hidden;
-  background-image:
-    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(227,53,13,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 10% 80%, rgba(59,94,166,0.08) 0%, transparent 60%);
-}
+body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100dvh; overflow-x: hidden; }
 .app { max-width: 500px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; }
 
-/* Header */
-.header {
-  background: linear-gradient(135deg, #1A0A0A 0%, #1A1A2E 100%);
-  border-bottom: 1px solid rgba(227,53,13,0.2);
-  padding: 14px 16px 10px;
-  position: sticky; top: 0; z-index: 100;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-icon {
-  width: 32px; height: 32px;
-  background: linear-gradient(135deg, var(--red) 50%, #fff 50%);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  border: 2px solid #333;
-  position: relative;
-  box-shadow: 0 0 12px var(--red-glow);
-  flex-shrink: 0;
-}
-.logo-icon::after {
-  content: '';
-  width: 8px; height: 8px;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid #333;
-  position: absolute;
-}
-.logo-text {
-  font-size: 20px; font-weight: 900;
-  letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #fff 30%, var(--yellow));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.header-stats { display: flex; gap: 10px; }
-.stat-pill {
-  font-size: 11px; font-weight: 700;
-  color: var(--text-muted);
-  background: var(--bg3);
-  padding: 3px 10px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-}
-.stat-pill strong { color: var(--yellow); }
+/* Header - Cardmarket navy style */
+.header { background: var(--navy-dark); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 12px 14px 10px; position: sticky; top: 0; z-index: 100; }
+.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.logo { display: flex; align-items: center; gap: 8px; }
+.logo-icon { width: 28px; height: 28px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.logo-text { font-size: 18px; font-weight: 800; color: white; letter-spacing: -0.3px; }
+.header-stats { display: flex; gap: 6px; }
+.stat-pill { font-size: 11px; font-weight: 600; color: var(--text-muted-navy); background: rgba(255,255,255,0.08); padding: 3px 9px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.1); }
+.stat-pill strong { color: white; }
 
-/* Tabs */
-.tabs {
-  display: flex;
-  background: var(--bg2);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 72px; z-index: 99;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
+/* Tabs - Cardmarket style */
+.tabs { display: flex; background: var(--navy); border-bottom: none; position: sticky; top: 66px; z-index: 99; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
-.tab {
-  flex: 1; padding: 10px 4px; text-align: center;
-  font-size: 11px; font-weight: 700;
-  color: var(--text-faint);
-  border: none; background: none; cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s cubic-bezier(0.32,0.72,0,1);
-  white-space: nowrap;
-  letter-spacing: 0.3px;
-}
-.tab.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+.tab { flex: 1; padding: 11px 4px; text-align: center; font-size: 11px; font-weight: 600; color: var(--text-muted-navy); border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.15s; white-space: nowrap; font-family: var(--font); }
+.tab.active { color: white; border-bottom-color: var(--blue-light); }
 
-.content { flex: 1; padding: 12px 14px; }
+.content { flex: 1; padding: 12px 12px; }
 .page { display: none; }
 .page.active { display: block; }
 
 /* Search */
-.search-bar { padding: 10px 14px; background: var(--bg2); border-bottom: 1px solid var(--border); }
-.search-input {
-  width: 100%; padding: 10px 16px;
-  border: 1px solid var(--border-strong);
-  border-radius: 20px;
-  font-size: 14px; font-weight: 600;
-  background: var(--bg3);
-  color: var(--text);
-  outline: none;
-  font-family: var(--font);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.search-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-glow); }
-.search-input::placeholder { color: var(--text-faint); }
+.search-bar { padding: 8px 12px; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.search-input { width: 100%; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius); font-size: 13px; font-weight: 500; background: rgba(255,255,255,0.1); color: white; outline: none; font-family: var(--font); transition: border-color 0.2s; }
+.search-input:focus { border-color: var(--blue-light); background: rgba(255,255,255,0.15); }
+.search-input::placeholder { color: var(--text-muted-navy); }
 
-/* Collection cards */
-.card-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 12px;
-  margin-bottom: 10px;
-  transition: transform 0.15s, box-shadow 0.15s;
-  position: relative;
-  overflow: hidden;
-}
-.card-item::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--red), var(--yellow));
-  opacity: 0.6;
-}
+/* Card item (list view) */
+.card-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; margin-bottom: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); position: relative; }
 .card-item:active { transform: scale(0.99); }
-.card-inner { display: flex; gap: 12px; }
-.card-thumb { width: 64px; flex-shrink: 0; }
-.card-thumb img { width: 64px; height: 90px; object-fit: contain; border-radius: 8px; background: var(--bg3); display: block; }
-.card-thumb-ph {
-  width: 64px; height: 90px;
-  background: var(--bg3);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border);
-}
+.card-inner { display: flex; gap: 10px; }
+.card-thumb { width: 58px; flex-shrink: 0; }
+.card-thumb img { width: 58px; height: 82px; object-fit: contain; border-radius: 4px; background: var(--surface2); display: block; }
+.card-thumb-ph { width: 58px; height: 82px; background: var(--surface2); border-radius: 4px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
 .card-body { flex: 1; min-width: 0; }
-.card-name { font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.card-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
-.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin: 8px 0; }
-.price-cell {
-  background: var(--bg3);
-  border-radius: 8px; padding: 6px;
-  text-align: center;
-  border: 1px solid var(--border);
-}
-.price-label { font-size: 9px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; font-weight: 700; }
-.price-value { font-size: 12px; font-weight: 800; color: var(--yellow); }
-.card-links { display: flex; gap: 4px; flex-wrap: wrap; }
-.link-btn {
-  flex: 1; min-width: 56px; padding: 5px 4px;
-  border-radius: 8px;
-  border: 1px solid var(--border-strong);
-  background: var(--bg3);
-  font-size: 10px; font-weight: 700;
-  color: var(--text-muted);
-  text-align: center; cursor: pointer; text-decoration: none; display: block;
-  transition: all 0.15s;
-  font-family: var(--font);
-}
-.link-btn:active { transform: scale(0.97); }
-.link-btn.ebay { border-color: #0064d2; color: #4d9eff; }
-.link-btn.cardmarket { border-color: #00A550; color: #00cc66; }
-.link-btn.pricecharting { border-color: #9B7FE8; color: #b9a0ff; }
-.card-actions {
-  display: flex; gap: 4px; margin-top: 8px;
-  border-top: 1px solid var(--border);
-  padding-top: 8px;
-}
-.action-btn {
-  flex: 1; padding: 6px; border: none; background: none;
-  font-size: 11px; font-weight: 700;
-  color: var(--text-muted); cursor: pointer;
-  border-radius: 8px;
-  font-family: var(--font);
-  transition: background 0.15s, color 0.15s;
-}
-.action-btn:hover { background: var(--bg3); }
-.action-btn.danger { color: var(--red); }
-.action-btn.refresh { color: #4d9eff; }
+.card-name { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--navy-dark); }
+.card-meta { font-size: 11px; color: var(--text-muted); margin-top: 1px; font-weight: 500; }
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 7px 0; }
+.price-cell { background: var(--surface2); border-radius: var(--radius-sm); padding: 5px; text-align: center; border: 1px solid var(--border); }
+.price-label { font-size: 9px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px; font-weight: 600; }
+.price-value { font-size: 12px; font-weight: 700; color: var(--navy-dark); }
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 7px; }
+.link-btn { flex: 1; min-width: 50px; padding: 6px 4px; border-radius: var(--radius-sm); border: 1px solid var(--blue); background: var(--blue-pale); font-size: 10px; font-weight: 600; color: var(--blue); text-align: center; cursor: pointer; text-decoration: none; display: block; transition: all 0.15s; font-family: var(--font); }
+.link-btn:active { background: rgba(47,110,186,0.25); transform: scale(0.97); }
+.card-actions { display: flex; gap: 4px; margin-top: 7px; border-top: 1px solid var(--border); padding-top: 7px; }
+.action-btn { flex: 1; padding: 5px; border: none; background: none; font-size: 11px; font-weight: 600; color: var(--text-muted); cursor: pointer; border-radius: var(--radius-sm); font-family: var(--font); transition: background 0.15s; }
+.action-btn:hover { background: var(--surface2); }
+.action-btn.danger { color: #C62828; }
+.action-btn.refresh { color: var(--blue); }
 
-/* Empty state */
+/* Quick links */
+.quick-links { display: flex; gap: 3px; position: absolute; top: 8px; right: 8px; }
+.ql-btn { width: 24px; height: 24px; border-radius: var(--radius-sm); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; text-decoration: none; transition: all 0.15s; background: var(--surface2); border: 1px solid var(--border-strong); color: var(--text-muted); font-weight: 700; font-family: var(--font); }
+.ql-btn:active { transform: scale(0.9); }
+.ql-btn.danger { background: rgba(198,40,40,0.08); border-color: rgba(198,40,40,0.25); color: #C62828; }
+.ql-btn.refresh { background: var(--blue-pale); border-color: rgba(47,110,186,0.3); color: var(--blue); }
+
+/* Empty */
 .empty { text-align: center; padding: 48px 24px; }
-.empty-icon {
-  width: 64px; height: 64px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--red) 50%, #fff 50%);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 14px;
-  border: 3px solid var(--bg3);
-  position: relative;
-  box-shadow: 0 0 20px var(--red-glow);
-}
-.empty-icon::after {
-  content: '';
-  width: 12px; height: 12px;
-  background: white; border-radius: 50%;
-  border: 3px solid var(--bg3);
-  position: absolute;
-}
-.empty-title { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
-.empty-sub { font-size: 13px; color: var(--text-muted); line-height: 1.5; font-weight: 600; }
+.empty-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+.empty-title { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--navy-dark); }
+.empty-sub { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
 /* Add tab */
-.add-search-input {
-  width: 100%; padding: 13px 16px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  font-size: 15px; font-weight: 700;
-  background: var(--surface2);
-  color: var(--text);
-  outline: none;
-  margin-bottom: 12px;
-  font-family: var(--font);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.add-search-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-glow); }
-.add-search-input::placeholder { color: var(--text-faint); }
-.search-results {
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  overflow: hidden; margin-bottom: 12px;
-}
-.search-result-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  transition: background 0.15s;
-}
+.add-search-input { width: 100%; padding: 11px 14px; border: 1px solid var(--border-strong); border-radius: var(--radius); font-size: 14px; font-weight: 500; background: var(--surface); color: var(--text); outline: none; margin-bottom: 10px; font-family: var(--font); transition: border-color 0.2s, box-shadow 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.add-search-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--accent-glow); }
+.search-results { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.search-result-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; }
 .search-result-item:last-child { border-bottom: none; }
-.search-result-item:active { background: var(--bg3); }
-.result-img { width: 40px; height: 56px; object-fit: contain; border-radius: 6px; background: var(--bg3); flex-shrink: 0; }
+.search-result-item:active { background: var(--surface2); }
+.result-img { width: 36px; height: 50px; object-fit: contain; border-radius: 3px; background: var(--surface2); flex-shrink: 0; }
 .result-info { flex: 1; min-width: 0; }
-.result-name { font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.result-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
-.result-add {
-  width: 30px; height: 30px;
-  background: linear-gradient(135deg, var(--red), var(--red-dark));
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 0 10px var(--red-glow);
-}
-.result-add svg { width: 14px; height: 14px; stroke: white; fill: none; stroke-width: 2.5; }
-.search-status { padding: 16px; text-align: center; font-size: 13px; color: var(--text-muted); font-weight: 600; }
+.result-name { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--navy-dark); }
+.result-meta { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+.result-add { width: 28px; height: 28px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.result-add svg { width: 13px; height: 13px; stroke: white; fill: none; stroke-width: 2.5; }
+.search-status { padding: 14px; text-align: center; font-size: 13px; color: var(--text-muted); }
 
 /* Selected card */
-.selected-card {
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius); padding: 14px; margin-bottom: 14px;
-}
-.selected-card-inner { display: flex; gap: 14px; margin-bottom: 10px; }
-.selected-card-img img { width: 80px; height: 112px; object-fit: contain; border-radius: 8px; }
-.selected-card-name { font-size: 16px; font-weight: 900; margin-bottom: 4px; }
-.selected-card-meta { font-size: 12px; color: var(--text-muted); line-height: 1.6; font-weight: 600; }
-.deselect-btn { font-size: 12px; color: var(--red); background: none; border: none; cursor: pointer; font-weight: 700; font-family: var(--font); }
+.selected-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.selected-card-inner { display: flex; gap: 12px; margin-bottom: 8px; }
+.selected-card-img img { width: 72px; height: 100px; object-fit: contain; border-radius: 4px; }
+.selected-card-name { font-size: 15px; font-weight: 700; margin-bottom: 3px; color: var(--navy-dark); }
+.selected-card-meta { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.deselect-btn { font-size: 12px; color: var(--blue); background: none; border: none; cursor: pointer; font-weight: 600; font-family: var(--font); }
 
 /* Forms */
-.form-group { margin-bottom: 11px; }
-.form-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: block; font-weight: 700; letter-spacing: 0.3px; }
-.form-input {
-  width: 100%; padding: 10px 12px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  font-size: 14px; font-weight: 600;
-  background: var(--bg3); color: var(--text);
-  outline: none; font-family: var(--font);
-  transition: border-color 0.2s;
-}
-.form-input:focus { border-color: var(--red); }
-.form-section {
-  font-size: 10px; font-weight: 900;
-  color: var(--text-faint);
-  text-transform: uppercase; letter-spacing: 1px;
-  margin: 14px 0 7px;
-}
-.form-hint { font-size: 11px; color: var(--text-faint); margin-bottom: 8px; line-height: 1.4; font-weight: 600; }
-.btn-primary {
-  width: 100%; padding: 14px;
-  background: linear-gradient(135deg, var(--red), var(--red-dark));
-  color: white; border: none;
-  border-radius: var(--radius);
-  font-size: 15px; font-weight: 900;
-  cursor: pointer; margin-top: 6px;
-  font-family: var(--font);
-  box-shadow: 0 4px 16px var(--red-glow);
-  transition: all 0.2s cubic-bezier(0.32,0.72,0,1);
-  letter-spacing: 0.3px;
-}
-.btn-primary:active { transform: scale(0.98); opacity: 0.9; }
-.btn-secondary {
-  width: 100%; padding: 12px;
-  background: none; color: var(--text-muted);
-  border: none; border-radius: var(--radius);
-  font-size: 14px; cursor: pointer; font-family: var(--font);
-  font-weight: 700;
-}
+.form-group { margin-bottom: 10px; }
+.form-label { font-size: 12px; color: var(--text-muted); margin-bottom: 3px; display: block; font-weight: 600; }
+.form-input { width: 100%; padding: 9px 10px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; background: var(--surface); color: var(--text); outline: none; font-family: var(--font); transition: border-color 0.2s; }
+.form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 2px var(--accent-glow); }
+.form-section { font-size: 10px; font-weight: 700; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.8px; margin: 12px 0 6px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+.form-hint { font-size: 11px; color: var(--text-faint); margin-bottom: 7px; line-height: 1.4; }
+.btn-primary { width: 100%; padding: 12px; background: var(--blue); color: white; border: none; border-radius: var(--radius); font-size: 14px; font-weight: 700; cursor: pointer; margin-top: 6px; font-family: var(--font); transition: all 0.2s; }
+.btn-primary:active { opacity: 0.9; transform: scale(0.99); }
+.btn-secondary { width: 100%; padding: 11px; background: none; color: var(--text-muted); border: none; border-radius: var(--radius); font-size: 13px; cursor: pointer; font-family: var(--font); font-weight: 600; }
 .manual-prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.mpf label { font-size: 10px; color: var(--text-faint); display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
-.mpf input {
-  width: 100%; padding: 7px 8px;
-  border: 1px solid var(--border-strong);
-  border-radius: 8px; font-size: 13px; font-weight: 700;
-  background: var(--bg3); color: var(--text); outline: none;
-  font-family: var(--font);
-}
-.mpf input:focus { border-color: var(--red); }
+.mpf label { font-size: 10px; color: var(--text-faint); display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.4px; font-weight: 600; }
+.mpf input { width: 100%; padding: 7px 8px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; background: var(--surface); color: var(--text); outline: none; font-family: var(--font); }
+.mpf input:focus { border-color: var(--blue); }
+
+/* Grade selector */
+.grade-type-btns { display: flex; gap: 5px; margin-bottom: 8px; }
+.grade-type-btn { flex: 1; padding: 9px 4px; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); font-size: 13px; font-weight: 600; cursor: pointer; text-align: center; font-family: var(--font); transition: all 0.15s; }
+.grade-type-btn.active { background: var(--blue-pale); border-color: var(--blue); color: var(--blue); font-weight: 700; }
+.grade-select { display: none; margin-bottom: 8px; }
+.grade-select.visible { display: block; }
+.grade-pills { display: flex; gap: 5px; flex-wrap: wrap; }
+.grade-pill { padding: 5px 12px; border-radius: 3px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); font-size: 12px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.grade-pill.active { background: var(--blue-pale); border-color: var(--blue); color: var(--blue); font-weight: 700; }
+.copy-entry { display: flex; align-items: center; gap: 8px; background: var(--surface2); border-radius: var(--radius-sm); padding: 7px 10px; margin-bottom: 5px; border: 1px solid var(--border); }
+.copy-entry-label { flex: 1; font-size: 13px; font-weight: 600; color: var(--navy-dark); }
+.copy-entry-remove { color: #C62828; background: none; border: none; font-size: 15px; cursor: pointer; font-family: var(--font); padding: 0 4px; }
+.add-copy-btn { width: 100%; padding: 9px; border: 1px dashed rgba(47,110,186,0.4); border-radius: var(--radius-sm); background: none; color: var(--blue); font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font); margin-bottom: 8px; transition: background 0.15s; }
+.add-copy-btn:hover { background: var(--blue-pale); }
 
 /* Settings */
-.settings-section { margin-bottom: 20px; }
-.settings-title {
-  font-size: 10px; color: var(--text-faint);
-  text-transform: uppercase; letter-spacing: 1px;
-  font-weight: 900; padding: 0 4px; margin-bottom: 6px;
-}
-.settings-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden;
-}
-.settings-row {
-  padding: 12px 14px; border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-}
+.settings-section { margin-bottom: 18px; }
+.settings-title { font-size: 10px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; padding: 0 2px; margin-bottom: 5px; }
+.settings-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.settings-row { padding: 11px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .settings-row:last-child { border-bottom: none; }
-.settings-row-label { font-size: 14px; font-weight: 800; }
-.settings-row-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; font-weight: 600; }
-.settings-input {
-  width: 100%; padding: 9px 11px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  font-size: 12px; background: var(--bg3); color: var(--text);
-  outline: none; font-family: monospace; margin-top: 7px;
-}
-.settings-input:focus { border-color: var(--red); }
-.save-btn {
-  padding: 7px 14px;
-  background: linear-gradient(135deg, var(--red), var(--red-dark));
-  color: white; border: none;
-  border-radius: var(--radius-sm);
-  font-size: 12px; font-weight: 900; cursor: pointer;
-  white-space: nowrap; flex-shrink: 0;
-  font-family: var(--font);
-  box-shadow: 0 2px 8px var(--red-glow);
-}
+.settings-row-label { font-size: 13px; font-weight: 700; color: var(--navy-dark); }
+.settings-row-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+.settings-input { width: 100%; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 12px; background: var(--surface2); color: var(--text); outline: none; font-family: monospace; margin-top: 6px; }
+.settings-input:focus { border-color: var(--blue); }
+.save-btn { padding: 7px 14px; background: var(--blue); color: white; border: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0; font-family: var(--font); }
 
-/* User tabs (Chase) */
-.user-tab {
-  flex: 1; padding: 9px 4px; text-align: center;
-  font-size: 13px; font-weight: 800;
-  color: var(--text-faint);
-  border: none; background: none; cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.15s; font-family: var(--font);
-}
-.active-user { color: #9B7FE8; border-bottom-color: #9B7FE8 !important; }
+/* User tabs */
+.user-tab { flex: 1; padding: 9px 4px; text-align: center; font-size: 12px; font-weight: 600; color: var(--text-muted); border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; font-family: var(--font); }
+.active-user { color: var(--blue); border-bottom-color: var(--blue) !important; }
 
 /* Pokemon groups */
-.pokemon-group { margin-bottom: 8px; }
-.pokemon-group-header {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 10px 14px;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
-}
-.pokemon-group-header:active { background: var(--surface2); }
-.pokemon-group-thumb { width: 40px; height: 40px; object-fit: contain; border-radius: 6px; }
-.pokemon-group-thumb-ph { width: 40px; height: 40px; background: var(--bg3); border-radius: 6px; flex-shrink: 0; }
-.pokemon-group-name { font-size: 14px; font-weight: 800; flex: 1; }
-.pokemon-group-count {
-  font-size: 11px; color: var(--bg);
-  background: var(--yellow);
-  padding: 3px 9px; border-radius: 20px;
-  font-weight: 900;
-}
-.pokemon-group-arrow { font-size: 11px; color: var(--text-faint); transition: transform 0.2s; }
-.pokemon-group-arrow.open { transform: rotate(90deg); }
-.pokemon-group-cards { display: none; padding: 6px 0 4px; }
+.pokemon-group { margin-bottom: 6px; }
+.pokemon-group-header { display: flex; align-items: center; gap: 10px; background: var(--navy); border-radius: var(--radius); padding: 10px 12px; cursor: pointer; transition: background 0.15s; }
+.pokemon-group-header:active { background: var(--navy-light); }
+.pokemon-group-name { font-size: 13px; font-weight: 700; flex: 1; color: white; }
+.pokemon-group-count { font-size: 10px; color: var(--navy-dark); background: white; padding: 2px 8px; border-radius: 3px; font-weight: 700; }
+.pokemon-group-cards { display: none; padding: 4px 0; }
 .pokemon-group-cards.open { display: block; }
-.chase-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 3px solid #9B7FE8;
-  border-radius: 0 var(--radius) var(--radius) 0;
-  padding: 10px 10px 10px 12px;
-  margin-bottom: 6px;
-}
+.chase-card { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; padding: 9px; margin-bottom: 5px; position: relative; }
+
+/* Card grid (tile view) */
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.card-tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.15s; display: flex; flex-direction: column; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.card-tile:active { transform: scale(0.98); }
+.card-tile-img { width: 100%; aspect-ratio: 2.5/3.5; object-fit: contain; background: var(--surface2); display: block; padding: 5px; }
+.card-tile-img-ph { width: 100%; aspect-ratio: 2.5/3.5; background: var(--surface2); }
+.card-tile-body { padding: 7px 8px 8px; flex: 1; display: flex; flex-direction: column; border-top: 2px solid var(--navy); }
+.card-tile-name { font-size: 11px; font-weight: 700; line-height: 1.25; margin-bottom: 1px; color: var(--navy-dark); }
+.card-tile-set { font-size: 10px; color: var(--text-muted); font-weight: 500; margin-bottom: 1px; }
+.card-tile-rarity { font-size: 9px; color: var(--text-faint); font-weight: 500; margin-bottom: 4px; }
+.card-tile-price { font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 4px; }
+.card-tile-grade { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 2px; background: var(--blue-pale); border: 1px solid rgba(47,110,186,0.3); color: var(--blue); white-space: nowrap; }
+.card-tile-grade-row { display: flex; align-items: center; gap: 5px; margin-bottom: 4px; }
+.card-tile-grade-price { font-size: 13px; font-weight: 800; color: var(--navy-dark); margin-left: auto; }
+.card-tile-qty-badge { font-size: 10px; font-weight: 600; color: var(--text-muted); }
+.card-tile-btns { display: flex; flex-direction: column; gap: 3px; flex-shrink: 0; }
+.card-tile-btn { width: 20px; height: 20px; border-radius: 3px; font-size: 10px; font-weight: 700; cursor: pointer; font-family: var(--font); display: flex; align-items: center; justify-content: center; transition: all 0.15s; text-decoration: none; border: none; }
+.card-tile-btn:active { transform: scale(0.9); }
+.card-tile-btn.refresh { background: var(--blue-pale); border: 1px solid rgba(47,110,186,0.3); color: var(--blue); }
+.card-tile-btn.edit { background: rgba(27,42,74,0.08); border: 1px solid rgba(27,42,74,0.2); color: var(--navy); }
+.card-tile-btn.del { background: rgba(198,40,40,0.08); border: 1px solid rgba(198,40,40,0.2); color: #C62828; }
+
+/* View toggle */
+.view-toggle { display: flex; gap: 5px; padding: 8px 12px; background: var(--navy); border-bottom: none; }
+.view-btn { padding: 5px 12px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.15); background: none; font-size: 11px; font-weight: 600; color: var(--text-muted-navy); cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.view-btn.active { background: white; border-color: white; color: var(--navy-dark); }
+
+/* Card popup */
+.card-popup-img { width: 100px; height: 140px; object-fit: contain; border-radius: 4px; flex-shrink: 0; }
+.card-popup-header { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.card-popup-name { font-size: 15px; font-weight: 800; margin-bottom: 3px; color: var(--navy-dark); }
+.card-popup-meta { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.card-popup-links { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+.card-popup-link { padding: 11px 8px; border-radius: var(--radius-sm); border: 1px solid var(--blue); background: var(--blue-pale); font-size: 12px; font-weight: 700; color: var(--blue); text-align: center; text-decoration: none; display: block; font-family: var(--font); transition: all 0.15s; }
+.card-popup-link:active { background: rgba(47,110,186,0.25); }
+.card-popup-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.card-popup-action { padding: 10px 8px; border-radius: var(--radius-sm); border: none; font-size: 12px; font-weight: 700; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.card-popup-action.refresh { background: var(--blue-pale); border: 1px solid rgba(47,110,186,0.3); color: var(--blue); }
+.card-popup-action.edit { background: rgba(27,42,74,0.08); border: 1px solid rgba(27,42,74,0.2); color: var(--navy); }
+.card-popup-action.del { background: rgba(198,40,40,0.08); border: 1px solid rgba(198,40,40,0.25); color: #C62828; }
 
 /* Modal */
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 300; align-items: flex-end; backdrop-filter: blur(4px); }
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 300; align-items: flex-end; }
 .modal-overlay.open { display: flex; }
-.modal {
-  background: var(--surface);
-  border-radius: 24px 24px 0 0;
-  border-top: 1px solid var(--border-strong);
-  padding: 18px 16px; width: 100%;
-  max-height: 92dvh; overflow-y: auto;
-  padding-bottom: max(18px, env(safe-area-inset-bottom));
-}
-.modal-handle { width: 36px; height: 4px; background: var(--border-strong); border-radius: 2px; margin: 0 auto 16px; }
-.modal-title { font-size: 17px; font-weight: 900; margin-bottom: 14px; }
-.modal-preview {
-  display: flex; gap: 12px; align-items: center;
-  background: var(--bg3); border-radius: var(--radius-sm);
-  padding: 10px; margin-bottom: 14px;
-}
-.modal-preview img { width: 50px; height: 70px; object-fit: contain; border-radius: 6px; }
-.modal-preview .name { font-size: 14px; font-weight: 800; }
-.modal-preview .meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
+.modal { background: var(--surface); border-radius: 16px 16px 0 0; border-top: 3px solid var(--navy); padding: 16px 14px; width: 100%; max-height: 92dvh; overflow-y: auto; padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+.modal-handle { width: 32px; height: 3px; background: var(--border-strong); border-radius: 2px; margin: 0 auto 14px; }
+.modal-title { font-size: 16px; font-weight: 800; margin-bottom: 12px; color: var(--navy-dark); }
+.modal-preview { display: flex; gap: 10px; align-items: center; background: var(--surface2); border-radius: var(--radius-sm); padding: 9px; margin-bottom: 12px; border: 1px solid var(--border); }
+.modal-preview img { width: 44px; height: 62px; object-fit: contain; border-radius: 3px; }
+.modal-preview .name { font-size: 13px; font-weight: 700; color: var(--navy-dark); }
+.modal-preview .meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
 /* Toast */
-.toast {
-  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--red), var(--red-dark));
-  color: white; padding: 10px 20px;
-  border-radius: 20px; font-size: 13px; font-weight: 800;
-  z-index: 400; opacity: 0;
-  transition: opacity 0.2s;
-  white-space: nowrap; pointer-events: none;
-  box-shadow: 0 4px 16px var(--red-glow);
-  font-family: var(--font);
-}
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--navy-dark); color: white; padding: 9px 18px; border-radius: var(--radius); font-size: 13px; font-weight: 600; z-index: 400; opacity: 0; transition: opacity 0.2s; white-space: nowrap; pointer-events: none; box-shadow: 0 4px 16px rgba(0,0,0,0.25); font-family: var(--font); }
 .toast.show { opacity: 1; }
-
-/* Spinner */
-.spinner {
-  display: inline-block; width: 14px; height: 14px;
-  border: 2px solid var(--border-strong);
-  border-top-color: var(--red);
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
-  vertical-align: middle; margin-right: 5px;
-}
+.spinner { display: inline-block; width: 13px; height: 13px; border: 2px solid var(--border-strong); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 4px; }
 @keyframes spin { to { transform: rotate(360deg); } }
-
-.notice {
-  background: rgba(227,53,13,0.1);
-  border: 1px solid rgba(227,53,13,0.3);
-  border-radius: var(--radius-sm);
-  padding: 10px 12px; font-size: 12px; color: #ff8060;
-  margin-bottom: 12px; line-height: 1.5; font-weight: 700;
-}
+.notice { background: rgba(47,110,186,0.08); border: 1px solid rgba(47,110,186,0.25); border-radius: var(--radius-sm); padding: 9px 11px; font-size: 12px; color: var(--blue); margin-bottom: 10px; line-height: 1.5; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -478,13 +246,21 @@ body {
   <div class="header">
     <div class="header-top">
       <div class="logo">
-        <div class="logo-icon"></div>
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="13" fill="white" stroke="#1B2A4A" stroke-width="1.5"></circle>
+            <path d="M1.2 14 A12.8 12.8 0 0 1 26.8 14 Z" fill="#CC0000"></path>
+            <rect x="1" y="12.5" width="26" height="3" fill="#1B2A4A"></rect>
+            <circle cx="14" cy="14" r="4" fill="white" stroke="#1B2A4A" stroke-width="2"></circle>
+            <circle cx="14" cy="14" r="2" fill="#EEEEEE"></circle>
+          </svg>
+        </div>
         <span class="logo-text">PokéVault</span>
       </div>
       <div class="header-stats">
         <span class="stat-pill"><strong id="total-cards">1</strong> collectie</span>
-        <span class="stat-pill" style="color:#9B7FE8"><strong id="total-chase">0</strong> chase</span>
-        <span class="stat-pill">€<strong id="total-value">340</strong></span>
+        <span class="stat-pill"><strong id="total-chase">1</strong> chase</span>
+        <span class="stat-pill">€<strong id="total-value">0</strong></span>
       </div>
       <div style="text-align:right;">
         <span id="sync-status" style="font-size:10px;font-weight:700;color:#48BB78;opacity:0;transition:opacity 0.5s;"></span>
@@ -503,31 +279,28 @@ body {
     <div class="search-bar">
       <input class="search-input" type="search" placeholder="Zoek in je collectie…" id="search-input" oninput="renderCards()">
     </div>
-    <div class="content"><div id="cards-list"><div class="card-item">
-      <div class="card-inner">
-        <div class="card-thumb"><img src="./index_files/small" alt="Team Rocket&#39;s Mewtwo ex" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-name">Team Rocket's Mewtwo ex</div>
-          <div class="card-meta">#281 · Ascended Heroes</div>
-          <div class="price-grid">
-            <div class="price-cell"><div class="price-label">Raw</div><div class="price-value">€340.00</div></div>
-            <div class="price-cell"><div class="price-label">ACE 10</div><div class="price-value">€600.00</div></div>
-            <div class="price-cell"><div class="price-label">PSA 10</div><div class="price-value">€1150.00</div></div>
-          </div>
-          <div class="card-links">
-            <a class="link-btn ebay" href="https://www.ebay.nl/sch/i.html?_nkw=Team%20Rocket%27s%20Mewtwo%20ex%20Ascended%20Heroes%20281%20raw%20pokemon&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=3" target="_blank">eBay Raw</a>
-            <a class="link-btn ebay" href="https://www.ebay.nl/sch/i.html?_nkw=Team%20Rocket%27s%20Mewtwo%20ex%20Ascended%20Heroes%20281%20PSA%2010%20pokemon&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=3" target="_blank">eBay PSA</a>
-            <a class="link-btn cardmarket" href="https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Team+Rocket%27s+Mewtwo+ex+281&amp;sellerCountry=2%2C23&amp;language=1&amp;minCondition=6" target="_blank">Cardmarket</a>
-            <a class="link-btn pricecharting" href="https://www.pricecharting.com/search-products?q=Team%20Rocket%27s%20Mewtwo%20ex%20281%20pokemon&amp;type=prices" target="_blank">Pricecharting</a>
-          </div>
+    <div class="view-toggle">
+      <button class="view-btn" id="view-btn-list" onclick="setView(&#39;list&#39;)">☰ Lijst</button>
+      <button class="view-btn active" id="view-btn-grid" onclick="setView(&#39;grid&#39;)">⊞ Kaarten</button>
+    </div>
+    <div class="content"><div id="cards-list"><div class="card-grid"><div class="card-tile" onclick="openCardPopup(&#39;mog1hse4ddzdi1n0wjw&#39;)">
+    <img class="card-tile-img" src="./index_files/large" alt="Team Rocket&#39;s Mewtwo ex" loading="lazy">
+    <div class="card-tile-body">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
+        <div style="flex:1;min-width:0;">
+          <div class="card-tile-name">Team Rocket's Mewtwo ex</div>
+          <div class="card-tile-set">Ascended Heroes</div>
+          <div class="card-tile-rarity">Special Illustration Rare • #281</div>
+        </div>
+        <div class="card-tile-btns" onclick="event.stopPropagation()">
+          <button class="card-tile-btn refresh" onclick="refreshCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">↻</button>
+          <button class="card-tile-btn edit" onclick="editCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✎</button>
+          <button class="card-tile-btn del" onclick="deleteCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✕</button>
         </div>
       </div>
-      <div class="card-actions">
-        <button class="action-btn refresh" onclick="refreshCard(&#39;mofy6npfegzmmx6p7pi&#39;)">↻ eBay</button>
-        <button class="action-btn" onclick="editCard(&#39;mofy6npfegzmmx6p7pi&#39;)">✎ Bewerken</button>
-        <button class="action-btn danger" onclick="deleteCard(&#39;mofy6npfegzmmx6p7pi&#39;)">✕ Verwijder</button>
-      </div>
-    </div></div></div>
+      <div class="card-tile-grade-row"><span class="card-tile-grade">ACE 10</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">€600.00</span></div>
+    </div>
+  </div></div></div></div>
   </div>
 
   <div id="tab-chase" class="page">
@@ -538,7 +311,38 @@ body {
       <button id="user-btn-Vincent" class="user-tab active-user" onclick="switchUser(&#39;Vincent&#39;)">Vincent</button>
       <button id="user-btn-Skye" class="user-tab" onclick="switchUser(&#39;Skye&#39;)">Skye</button>
     </div>
-    <div class="content"><div id="chase-list"><div class="empty"><div class="empty-icon"></div><div class="empty-title">Nog geen Chase Cards</div><div class="empty-sub">Voeg kaarten toe via + Toevoegen → Chase Cards.</div></div></div></div>
+    <div class="content"><div id="chase-list"><div class="pokemon-group">
+      <div class="pokemon-group-header" onclick="toggleGroup(0)">
+        <span class="pokemon-group-name">Dragonite</span>
+        <span class="pokemon-group-count">1 kaart</span>
+      </div>
+      <div class="pokemon-group-cards"><div class="card-item" style="position:relative;">
+        <div class="quick-links">
+          <button class="ql-btn" style="color:#22c55e;background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.25);" onclick="moveToCollection(&#39;mofzr412tyag2vsk76e&#39;)" title="Naar Collectie">✓</button>
+          <button class="ql-btn" onclick="editCard(&#39;mofzr412tyag2vsk76e&#39;)" title="Bewerken">✎</button>
+          <button class="ql-btn danger" onclick="deleteChase(&#39;mofzr412tyag2vsk76e&#39;)" title="Verwijderen">✕</button>
+        </div>
+        <div class="card-inner">
+          <div class="card-thumb"><img src="./index_files/small" alt="Mega Dragonite ex" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Mega Dragonite ex</div>
+            <div class="card-meta">#290 · Ascended Heroes</div>
+            <div class="price-grid">
+              <div class="price-cell"><div class="price-label">Raw</div><div class="price-value">€600.00</div></div>
+              <div class="price-cell"><div class="price-label">ACE 10</div><div class="price-value">—</div></div>
+              <div class="price-cell"><div class="price-label">PSA 10</div><div class="price-value">—</div></div>
+            </div>
+            <div class="card-links">
+              <a class="link-btn" href="https://www.ebay.nl/sch/i.html?_nkw=Mega%20Dragonite%20ex%20290&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay Raw</a>
+              <a class="link-btn" href="https://www.ebay.nl/sch/i.html?_nkw=Mega%20Dragonite%20ex%20290%20PSA%2010&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay PSA</a>
+              <a class="link-btn" href="https://www.ebay.nl/sch/i.html?_nkw=Mega%20Dragonite%20ex%20290%20ACE%2010&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay ACE</a>
+              <a class="link-btn" href="https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Mega+Dragonite+ex+290&amp;sellerCountry=2%2C23&amp;language=1&amp;minCondition=6" target="_blank">Cardmarket</a>
+              <a class="link-btn" href="https://www.pricecharting.com/search-products?q=Mega%20Dragonite%20ex%20290%20pokemon&amp;type=prices" target="_blank">Pricechart</a>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </div></div></div>
   </div>
 
   <div id="tab-add" class="page">
@@ -551,6 +355,20 @@ body {
       </div>
       <div id="selected-section" style="display:none">
         <div class="selected-card" id="selected-preview"></div>
+        <div class="form-section">Staat van de kaart</div>
+        <p class="form-hint">Kies het type en grade, dan voeg je een exemplaar toe. Je kunt meerdere toevoegen.</p>
+        <div class="grade-type-btns">
+          <button class="grade-type-btn active" id="gtype-raw" onclick="selectGradeType(&#39;raw&#39;)">Raw</button>
+          <button class="grade-type-btn" id="gtype-ace" onclick="selectGradeType(&#39;ace&#39;)">ACE</button>
+          <button class="grade-type-btn" id="gtype-psa" onclick="selectGradeType(&#39;psa&#39;)">PSA</button>
+        </div>
+        <div class="grade-select" id="grade-select-wrap">
+          <p style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-weight:600;">Selecteer grade:</p>
+          <div class="grade-pills" id="grade-pills"></div>
+        </div>
+        <button class="add-copy-btn" onclick="addCopy()">+ Voeg exemplaar toe</button>
+        <div id="copies-list"></div>
+        <div id="copies-summary" style="display:none;background:var(--blue-pale);border:1px solid rgba(47,110,186,0.3);border-radius:var(--radius-sm);padding:8px 12px;margin-bottom:8px;font-size:12px;font-weight:600;color:var(--blue);"></div>
         <div class="form-section">Handmatige prijzen (optioneel)</div>
         <p class="form-hint">Laat leeg voor automatisch via eBay.</p>
         <div class="manual-prices">
@@ -564,12 +382,12 @@ body {
           <input class="form-input" type="url" id="ap-cm" placeholder="https://www.cardmarket.com/…">
         </div>
         <div class="form-group">
-          <label class="form-label">Pricecharting URL</label>
+          <label class="form-label">Pricechart URL</label>
           <input class="form-input" type="url" id="ap-pc" placeholder="https://www.pricecharting.com/…">
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
   <button class="btn-primary" onclick="addSelectedCard(&#39;collection&#39;)" style="font-size:13px;padding:11px;">+ Collectie</button>
-  <button class="btn-primary" onclick="addSelectedCard(&#39;chase&#39;)" style="font-size:13px;padding:11px;background:#6B46C1;">+ Chase Cards</button>
+  <button class="btn-primary" onclick="addSelectedCard(&#39;chase&#39;)" style="font-size:13px;padding:11px;background:var(--purple);">+ Chase Cards</button>
 </div>
         <button class="btn-secondary" onclick="clearSelected()">← Andere kaart kiezen</button>
       </div>
@@ -692,12 +510,55 @@ body {
   </div>
 </div>
 
+<!-- Card Popup -->
+<div class="modal-overlay" id="card-popup">
+  <div class="modal" style="padding-bottom: max(24px, env(safe-area-inset-bottom));">
+    <div class="modal-handle"></div>
+    <div id="card-popup-content">
+    <div class="card-popup-header">
+      <img class="card-popup-img" src="./index_files/large" alt="Team Rocket&#39;s Mewtwo ex">
+      <div style="flex:1;min-width:0;">
+        <div class="card-popup-name">Team Rocket's Mewtwo ex</div>
+        <div class="card-popup-meta">
+          Ascended Heroes • #281<br>
+          Special Illustration Rare
+        </div>
+        <div style="margin-top:8px;"><div class="card-tile-grade-row"><span class="card-tile-grade">ACE 10</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">€600.00</span></div></div>
+      </div>
+    </div>
+    <div class="card-popup-links">
+      <a class="card-popup-link" href="https://www.ebay.nl/sch/i.html?_nkw=Team%20Rocket%27s%20Mewtwo%20ex%20281&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay Raw</a>
+      <a class="card-popup-link" href="https://www.ebay.nl/sch/i.html?_nkw=Team%20Rocket%27s%20Mewtwo%20ex%20281%20PSA%2010&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay PSA</a>
+      <a class="card-popup-link" href="https://www.ebay.nl/sch/i.html?_nkw=Team%20Rocket%27s%20Mewtwo%20ex%20281%20ACE%2010&amp;LH_Sold=1&amp;LH_Complete=1&amp;_sacat=2536&amp;LH_PrefLoc=6" target="_blank">eBay ACE</a>
+      <a class="card-popup-link" href="https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Team+Rocket%27s+Mewtwo+ex+281&amp;sellerCountry=2%2C23&amp;language=1&amp;minCondition=6" target="_blank">Cardmarket</a>
+      <a class="card-popup-link" href="https://www.pricecharting.com/search-products?q=Team%20Rocket%27s%20Mewtwo%20ex%20281%20pokemon&amp;type=prices" target="_blank" style="grid-column:span 2;">Pricechart</a>
+    </div>
+    <div class="card-popup-actions">
+      <button class="card-popup-action refresh" onclick="refreshCard(&#39;mog1hse4ddzdi1n0wjw&#39;);closeCardPopup()">↻ eBay verversen</button>
+      <button class="card-popup-action edit" onclick="closeCardPopup();editCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✎ Bewerken</button>
+      <button class="card-popup-action del" style="grid-column:span 2;" onclick="closeCardPopup();deleteCard(&#39;mog1hse4ddzdi1n0wjw&#39;)">✕ Verwijderen</button>
+    </div></div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="edit-modal">
   <div class="modal">
     <div class="modal-handle"></div>
     <p class="modal-title">Kaart bewerken</p>
     <input type="hidden" id="edit-id">
     <div id="edit-preview" class="modal-preview" style="display:none"></div>
+    <div class="form-section">Exemplaren</div>
+    <div id="edit-copies-list"></div>
+    <div class="grade-type-btns">
+      <button class="grade-type-btn active" id="egtype-raw" onclick="selectEditGradeType(&#39;raw&#39;)">Raw</button>
+      <button class="grade-type-btn" id="egtype-ace" onclick="selectEditGradeType(&#39;ace&#39;)">ACE</button>
+      <button class="grade-type-btn" id="egtype-psa" onclick="selectEditGradeType(&#39;psa&#39;)">PSA</button>
+    </div>
+    <div class="grade-select" id="edit-grade-select-wrap">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;font-weight:700;">Grade:</p>
+      <div class="grade-pills" id="edit-grade-pills"></div>
+    </div>
+    <button class="add-copy-btn" onclick="addEditCopy()">+ Exemplaar toevoegen</button>
     <div class="form-section">Handmatige prijzen</div>
     <div class="manual-prices">
       <div class="mpf"><label>Raw (€)</label><input type="number" id="ep-raw" placeholder="0.00" step="0.01" min="0"></div>
@@ -710,7 +571,7 @@ body {
       <input class="form-input" type="url" id="ep-cm" placeholder="https://www.cardmarket.com/…">
     </div>
     <div class="form-group">
-      <label class="form-label">Pricecharting URL</label>
+      <label class="form-label">Pricechart URL</label>
       <input class="form-input" type="url" id="ep-pc" placeholder="https://www.pricecharting.com/…">
     </div>
     <button class="btn-primary" onclick="saveEdit()">Opslaan</button>
@@ -727,6 +588,105 @@ const USERS = ['Vincent','Skye'];
 let currentUser = 'Vincent';
 let chaseData = { Vincent:[], Skye:[] };
 let selCard = null, searchTimer = null;
+
+let currentView = 'grid';
+
+function setView(v) {
+  currentView = v;
+  document.getElementById('view-btn-list')?.classList.toggle('active', v==='list');
+  document.getElementById('view-btn-grid')?.classList.toggle('active', v==='grid');
+  renderCards();
+}
+
+// Grade/copy selector state
+let currentGradeType = 'raw';
+let currentGrade = null;
+let copies = []; // [{type:'raw'}, {type:'ace',grade:'10'}, {type:'psa',grade:'9'}]
+
+const GRADES = ['1','2','3','4','5','6','7','8','9','10'];
+
+function selectGradeType(type) {
+  currentGradeType = type;
+  currentGrade = null;
+  document.querySelectorAll('.grade-type-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('gtype-'+type)?.classList.add('active');
+  const wrap = document.getElementById('grade-select-wrap');
+  const pills = document.getElementById('grade-pills');
+  if(type === 'raw') {
+    wrap.classList.remove('visible');
+  } else {
+    wrap.classList.add('visible');
+    pills.innerHTML = GRADES.map(g =>
+      `<button class="grade-pill${currentGrade===g?' active':''}" onclick="selectGrade('${g}')">${g}</button>`
+    ).join('');
+  }
+}
+
+function selectGrade(g) {
+  currentGrade = g;
+  document.querySelectorAll('.grade-pill').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.grade-pill').forEach(b => { if(b.textContent===g) b.classList.add('active'); });
+}
+
+function addCopy() {
+  if(currentGradeType !== 'raw' && !currentGrade) {
+    showToast('Selecteer eerst een grade (1-10)');
+    // Highlight grade pills
+    document.getElementById('grade-select-wrap')?.classList.add('visible');
+    return;
+  }
+  const copy = currentGradeType === 'raw'
+    ? { type:'raw', label:'Raw' }
+    : { type: currentGradeType, grade: currentGrade, label: currentGradeType.toUpperCase()+' '+currentGrade };
+  copies.push(copy);
+  // Reset grade selection for next entry
+  currentGrade = null;
+  document.querySelectorAll('#grade-pills .grade-pill').forEach(b => b.classList.remove('active'));
+  renderCopies();
+  showToast(`${copy.label} toegevoegd`);
+}
+
+function removeCopy(idx) {
+  copies.splice(idx, 1);
+  renderCopies();
+}
+
+function renderCopies() {
+  const el = document.getElementById('copies-list');
+  const summary = document.getElementById('copies-summary');
+  if(!el) return;
+  if(!copies.length) {
+    el.innerHTML = '';
+    if(summary) { summary.style.display='none'; summary.textContent=''; }
+    return;
+  }
+  el.innerHTML = copies.map((c,i) =>
+    `<div class="copy-entry">
+      <span class="copy-entry-label">${c.label}</span>
+      <button class="copy-entry-remove" onclick="removeCopy(${i})">×</button>
+    </div>`
+  ).join('');
+  // Update summary
+  if(summary) {
+    const rawCount = copies.filter(x=>x.type==='raw').length;
+    const aceItems = copies.filter(x=>x.type==='ace');
+    const psaItems = copies.filter(x=>x.type==='psa');
+    const parts = [];
+    if(rawCount) parts.push(`Raw ×${rawCount}`);
+    if(aceItems.length) parts.push(aceItems.map(x=>`ACE ${x.grade}`).join(', '));
+    if(psaItems.length) parts.push(psaItems.map(x=>`PSA ${x.grade}`).join(', '));
+    summary.style.display = 'block';
+    summary.innerHTML = `<strong>Toe te voegen:</strong> ${parts.join(' · ')} <span style="color:var(--text-muted);font-weight:500;">(Qty: ${copies.length})</span>`;
+  }
+}
+
+function clearCopies() {
+  copies = [];
+  currentGradeType = 'raw';
+  currentGrade = null;
+  renderCopies();
+  selectGradeType('raw');
+}
 
 async function load() {
   // Load local data first (instant)
@@ -971,6 +931,7 @@ function clearSelected(){
   document.getElementById('selected-section').style.display='none';
   document.getElementById('card-search').value='';
   document.getElementById('results-wrap').innerHTML='';
+  clearCopies();
 }
 
 function addSelectedCard(list='collection'){
@@ -987,6 +948,7 @@ function addSelectedCard(list='collection'){
     priceRaw: parseFloat(document.getElementById('ap-raw').value)||null,
     priceAce: parseFloat(document.getElementById('ap-ace').value)||null,
     pricePsa: parseFloat(document.getElementById('ap-psa').value)||null,
+    copies: copies.slice(),
     cmUrl: document.getElementById('ap-cm').value.trim(),
     pcUrl: document.getElementById('ap-pc').value.trim(),
     ebayRaw:null, ebayAce:null, ebayPsa:null,
@@ -1006,7 +968,14 @@ function addSelectedCard(list='collection'){
   }
 }
 
-function ebayUrl(card,grade){ const num=(card.number||'').split('/')[0].trim(); const q=[card.name, card.set||'', num, grade, 'pokemon'].filter(Boolean).join(' '); return `https://www.ebay.nl/sch/i.html?_nkw=${encodeURIComponent(q)}&LH_Sold=1&LH_Complete=1&_sacat=2536&LH_PrefLoc=3`; }
+function ebayUrl(card,grade){
+  const num=(card.number||'').split('/')[0].trim();
+  const base=card.name+(num?' '+num:'');
+  let q;
+  if(grade==='raw') q=base;
+  else q=base+' '+grade;
+  return `https://www.ebay.nl/sch/i.html?_nkw=${encodeURIComponent(q)}&LH_Sold=1&LH_Complete=1&_sacat=2536&LH_PrefLoc=6`;
+}
 function cmUrl(card){ const num=(card.number||'').split('/')[0].trim(); if(card.cmUrl){ const u=new URL(card.cmUrl); if(cfg.cmCountries) u.searchParams.set('sellerCountry',cfg.cmCountries); if(cfg.cmLanguage) u.searchParams.set('language',cfg.cmLanguage); if(cfg.cmCondition) u.searchParams.set('minCondition',cfg.cmCondition); return u.toString(); } const params=new URLSearchParams(); params.set('searchString',card.name+(num?' '+num:'')); if(cfg.cmCountries) params.set('sellerCountry',cfg.cmCountries); if(cfg.cmLanguage) params.set('language',cfg.cmLanguage); if(cfg.cmCondition) params.set('minCondition',cfg.cmCondition); return 'https://www.cardmarket.com/en/Pokemon/Products/Search?'+params.toString(); }
 function pcUrl(card){ return card.pcUrl||`https://www.pricecharting.com/search-products?q=${encodeURIComponent(card.name+' '+(card.number||'')+' pokemon')}&type=prices`; }
 
@@ -1099,40 +1068,82 @@ function renderChase(){
     const cardsHtml=cards.map(c=>{
       const rv=c.priceRaw??c.ebayRaw, av=c.priceAce??c.ebayAce, pv=c.pricePsa??c.ebayPsa;
       const meta=[c.number?`#${c.number}`:'',c.set].filter(Boolean).join(' · ');
-      return `<div class="chase-card">
+      return `<div class="card-item" style="position:relative;">
+        <div class="quick-links">
+          <button class="ql-btn" style="color:#22c55e;background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.25);" onclick="moveToCollection('${c.id}')" title="Naar Collectie">✓</button>
+          <button class="ql-btn" onclick="editCard('${c.id}')" title="Bewerken">✎</button>
+          <button class="ql-btn danger" onclick="deleteChase('${c.id}')" title="Verwijderen">✕</button>
+        </div>
         <div class="card-inner">
-          <div class="card-thumb">${c.imageSmall?`<img src="${c.imageSmall}" alt="${c.name}" loading="lazy" style="width:48px;height:67px;object-fit:contain;border-radius:4px;">`:'<div class="card-thumb-ph" style="width:48px;height:67px;"></div>'}</div>
+          <div class="card-thumb">${c.imageSmall?`<img src="${c.imageSmall}" alt="${c.name}" loading="lazy">`:'<div class="card-thumb-ph"></div>'}</div>
           <div class="card-body">
-            ${meta?`<div class="card-meta" style="margin-bottom:4px;">${meta}</div>`:''}
+            <div class="card-name">${c.name}</div>
+            ${meta?`<div class="card-meta">${meta}</div>`:''}
             <div class="price-grid">
               <div class="price-cell"><div class="price-label">Raw</div><div class="price-value">${fmt(rv,cur)}</div></div>
               <div class="price-cell"><div class="price-label">ACE 10</div><div class="price-value">${fmt(av,cur)}</div></div>
               <div class="price-cell"><div class="price-label">PSA 10</div><div class="price-value">${fmt(pv,cur)}</div></div>
             </div>
             <div class="card-links">
-              <a class="link-btn ebay" href="${ebayUrl(c,'raw')}" target="_blank">eBay Raw</a>
-              <a class="link-btn ebay" href="${ebayUrl(c,'PSA 10')}" target="_blank">eBay PSA</a>
-              <a class="link-btn cardmarket" href="${cmUrl(c)}" target="_blank">Cardmarket</a>
-              <a class="link-btn pricecharting" href="${pcUrl(c)}" target="_blank">Pricecharting</a>
+              <a class="link-btn" href="${ebayUrl(c,'raw')}" target="_blank">eBay Raw</a>
+              <a class="link-btn" href="${ebayUrl(c,'PSA 10')}" target="_blank">eBay PSA</a>
+              <a class="link-btn" href="${ebayUrl(c,'ACE 10')}" target="_blank">eBay ACE</a>
+              <a class="link-btn" href="${cmUrl(c)}" target="_blank">Cardmarket</a>
+              <a class="link-btn" href="${pcUrl(c)}" target="_blank">Pricechart</a>
             </div>
           </div>
-        </div>
-        <div class="card-actions">
-          <button class="action-btn" style="color:white;font-weight:900;background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:8px;padding:6px 10px;box-shadow:0 2px 8px rgba(34,197,94,0.3);" onclick="moveToCollection('${c.id}')">✓ Naar Collectie</button>
-          <button class="action-btn danger" onclick="deleteChase('${c.id}')">✕ Verwijder</button>
         </div>
       </div>`;
     }).join('');
     return `<div class="pokemon-group">
       <div class="pokemon-group-header" onclick="toggleGroup(${idx})">
-        ${thumb?`<img class="pokemon-group-thumb" src="${thumb}" alt="${pokemon}" loading="lazy">`:'<div class="pokemon-group-thumb-ph"></div>'}
         <span class="pokemon-group-name">${pokemon}</span>
         <span class="pokemon-group-count">${cards.length} kaart${cards.length!==1?'en':''}</span>
-        <span class="pokemon-group-arrow${isOpen?' open':''}">▶</span>
       </div>
       <div class="pokemon-group-cards${isOpen?' open':''}">${cardsHtml}</div>
     </div>`;
   }).join('');
+}
+
+function renderCardTile(c, cur) {
+  const allCopies = c.copies||[];
+  const rawCount = allCopies.filter(x=>x.type==='raw').length;
+  const aceItems = allCopies.filter(x=>x.type==='ace');
+  const psaItems = allCopies.filter(x=>x.type==='psa');
+  const totalQty = allCopies.length;
+  const rv = c.priceRaw??c.ebayRaw;
+  const av = c.priceAce??c.ebayAce;
+  const pv = c.pricePsa??c.ebayPsa;
+  const num = (c.number||'').split('/')[0].trim();
+
+  const gradeRows = [
+    ...(rawCount>0 ? [`<div class="card-tile-grade-row"><span class="card-tile-grade">Raw</span><span class="card-tile-qty-badge">Qty: ${rawCount}</span><span class="card-tile-grade-price">${fmt(rv,cur)}</span></div>`] : []),
+    ...aceItems.map(x=>`<div class="card-tile-grade-row"><span class="card-tile-grade">ACE ${x.grade}</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">${fmt(av,cur)}</span></div>`),
+    ...psaItems.map(x=>`<div class="card-tile-grade-row"><span class="card-tile-grade">PSA ${x.grade}</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">${fmt(pv,cur)}</span></div>`)
+  ].join('');
+
+  const bestPrice = pv??av??rv;
+
+  return `<div class="card-tile" onclick="openCardPopup('${c.id}')">
+    ${c.imageLarge||c.imageSmall
+      ? `<img class="card-tile-img" src="${c.imageLarge||c.imageSmall}" alt="${c.name}" loading="lazy">`
+      : `<div class="card-tile-img-ph"></div>`}
+    <div class="card-tile-body">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin-bottom:6px;">
+        <div style="flex:1;min-width:0;">
+          <div class="card-tile-name">${c.name}</div>
+          <div class="card-tile-set">${c.set||''}</div>
+          ${c.rarity?`<div class="card-tile-rarity">${c.rarity}${num?' • #'+num:''}</div>`:''}
+        </div>
+        <div class="card-tile-btns" onclick="event.stopPropagation()">
+          <button class="card-tile-btn refresh" onclick="refreshCard('${c.id}')">↻</button>
+          <button class="card-tile-btn edit" onclick="editCard('${c.id}')">✎</button>
+          <button class="card-tile-btn del" onclick="deleteCard('${c.id}')">✕</button>
+        </div>
+      </div>
+      ${totalQty>0 ? gradeRows : (bestPrice!=null?`<div class="card-tile-price">${fmt(bestPrice,cur)}</div>`:'')}
+    </div>
+  </div>`;
 }
 
 function renderCards(){
@@ -1141,6 +1152,10 @@ function renderCards(){
   const list=document.getElementById('cards-list');
   if(!f.length){ list.innerHTML=`<div class="empty"><div class="empty-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="empty-title">${cards.length?'Geen resultaten':'Nog geen kaarten'}</div><div class="empty-sub">${cards.length?'Probeer een andere zoekterm.':'Ga naar + Toevoegen om te beginnen.'}</div></div>`; return; }
   const cur=cfg.currency||'EUR';
+  if(currentView==='grid'){
+    list.innerHTML=`<div class="card-grid">${f.map(c=>renderCardTile(c,cur)).join('')}</div>`;
+    return;
+  }
   list.innerHTML=f.map(c=>{
     const rv=c.priceRaw??c.ebayRaw, av=c.priceAce??c.ebayAce, pv=c.pricePsa??c.ebayPsa;
     const rs=(!c.priceRaw&&c.ebayRaw)?'<span style="font-size:9px;color:var(--text-faint)"> e</span>':'';
@@ -1149,29 +1164,49 @@ function renderCards(){
     const upd=c.lastUpdated?new Date(c.lastUpdated).toLocaleDateString('nl-NL',{day:'numeric',month:'short'}):'';
     const meta=[c.number?`#${c.number}`:'',c.set].filter(Boolean).join(' · ');
     return `<div class="card-item">
+      <div class="quick-links">
+        <button class="ql-btn refresh" onclick="refreshCard('${c.id}')" title="eBay prijzen verversen">↻</button>
+        <button class="ql-btn" onclick="editCard('${c.id}')" title="Bewerken">✎</button>
+        <button class="ql-btn danger" onclick="deleteCard('${c.id}')" title="Verwijderen">✕</button>
+      </div>
+
       <div class="card-inner">
         <div class="card-thumb">${c.imageSmall?`<img src="${c.imageSmall}" alt="${c.name}" loading="lazy">`:'<div class="card-thumb-ph"></div>'}</div>
         <div class="card-body">
           <div class="card-name">${c.name}</div>
           ${meta?`<div class="card-meta">${meta}</div>`:''}
-          <div class="price-grid">
-            <div class="price-cell"><div class="price-label">Raw</div><div class="price-value">${fmt(rv,cur)}${rs}</div></div>
-            <div class="price-cell"><div class="price-label">ACE 10</div><div class="price-value">${fmt(av,cur)}${as}</div></div>
-            <div class="price-cell"><div class="price-label">PSA 10</div><div class="price-value">${fmt(pv,cur)}${ps}</div></div>
-          </div>
+          ${(()=>{
+            const allCopies=c.copies||[];
+            const rawCount=allCopies.filter(x=>x.type==='raw').length;
+            const aceGrades=allCopies.filter(x=>x.type==='ace').map(x=>x.grade);
+            const psaGrades=allCopies.filter(x=>x.type==='psa').map(x=>x.grade);
+            const hasAny=rawCount||aceGrades.length||psaGrades.length;
+            return `<div class="price-grid">
+              <div class="price-cell">
+                <div class="price-label">Raw${rawCount?` <span style="color:var(--yellow);font-size:9px;font-weight:900;">×${rawCount}</span>`:''}</div>
+                <div class="price-value">${fmt(rv,cur)}${rs}</div>
+              </div>
+              <div class="price-cell">
+                <div class="price-label">ACE${aceGrades.length?` <span style="color:var(--yellow);font-size:9px;font-weight:900;">${aceGrades.map(g=>'&nbsp;'+g).join(',')}</span>`:' 10'}</div>
+                <div class="price-value">${fmt(av,cur)}${as}</div>
+              </div>
+              <div class="price-cell">
+                <div class="price-label">PSA${psaGrades.length?` <span style="color:var(--yellow);font-size:9px;font-weight:900;">${psaGrades.map(g=>'&nbsp;'+g).join(',')}</span>`:' 10'}</div>
+                <div class="price-value">${fmt(pv,cur)}${ps}</div>
+              </div>
+            </div>`;
+          })()}
           <div class="card-links">
-            <a class="link-btn ebay" href="${ebayUrl(c,'raw')}" target="_blank">eBay Raw</a>
-            <a class="link-btn ebay" href="${ebayUrl(c,'PSA 10')}" target="_blank">eBay PSA</a>
-            <a class="link-btn cardmarket" href="${cmUrl(c)}" target="_blank">Cardmarket</a>
-            <a class="link-btn pricecharting" href="${pcUrl(c)}" target="_blank">Pricecharting</a>
+            <a class="link-btn" href="${ebayUrl(c,'raw')}" target="_blank">eBay Raw</a>
+            <a class="link-btn" href="${ebayUrl(c,'PSA 10')}" target="_blank">eBay PSA</a>
+            <a class="link-btn" href="${ebayUrl(c,'ACE 10')}" target="_blank">eBay ACE</a>
+            <a class="link-btn" href="${cmUrl(c)}" target="_blank">Cardmarket</a>
+            <a class="link-btn" href="${pcUrl(c)}" target="_blank">Pricechart</a>
           </div>
+
         </div>
       </div>
-      <div class="card-actions">
-        <button class="action-btn refresh" onclick="refreshCard('${c.id}')">↻ eBay</button>
-        <button class="action-btn" onclick="editCard('${c.id}')">✎ Bewerken</button>
-        <button class="action-btn danger" onclick="deleteCard('${c.id}')">✕ Verwijder</button>
-      </div>
+
     </div>`;
   }).join('');
 }
@@ -1181,6 +1216,9 @@ function refreshCard(id){ if(!cfg.ebayAppId){ showToast('Stel eerst eBay App ID 
 function editCard(id){
   const c=cards.find(x=>x.id===id); if(!c) return;
   document.getElementById('edit-id').value=id;
+  editCopies = (c.copies||[]).map(x=>({...x}));
+  renderEditCopies();
+  selectEditGradeType('raw');
   document.getElementById('ep-raw').value=c.priceRaw||'';
   document.getElementById('ep-ace').value=c.priceAce||'';
   document.getElementById('ep-psa').value=c.pricePsa||'';
@@ -1192,8 +1230,61 @@ function editCard(id){
   document.getElementById('edit-modal').classList.add('open');
 }
 
+let editCopies = [];
+let editGradeType = 'raw';
+let editGrade = null;
+
+function selectEditGradeType(type) {
+  editGradeType = type;
+  editGrade = null;
+  document.querySelectorAll('#edit-modal .grade-type-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('egtype-'+type)?.classList.add('active');
+  const wrap = document.getElementById('edit-grade-select-wrap');
+  const pills = document.getElementById('edit-grade-pills');
+  if(type === 'raw') {
+    wrap.classList.remove('visible');
+  } else {
+    wrap.classList.add('visible');
+    pills.innerHTML = GRADES.map(g =>
+      `<button class="grade-pill${editGrade===g?' active':''}" onclick="selectEditGrade('${g}')">${g}</button>`
+    ).join('');
+  }
+}
+
+function selectEditGrade(g) {
+  editGrade = g;
+  document.querySelectorAll('#edit-grade-pills .grade-pill').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#edit-grade-pills .grade-pill').forEach(b => { if(b.textContent===g) b.classList.add('active'); });
+}
+
+function addEditCopy() {
+  if(editGradeType !== 'raw' && !editGrade) { showToast('Selecteer eerst een grade'); return; }
+  const copy = editGradeType === 'raw'
+    ? { type:'raw', label:'Raw' }
+    : { type: editGradeType, grade: editGrade, label: editGradeType.toUpperCase()+' '+editGrade };
+  editCopies.push(copy);
+  renderEditCopies();
+}
+
+function removeEditCopy(idx) {
+  editCopies.splice(idx, 1);
+  renderEditCopies();
+}
+
+function renderEditCopies() {
+  const el = document.getElementById('edit-copies-list');
+  if(!el) return;
+  el.innerHTML = editCopies.map((c,i) =>
+    `<div class="copy-entry">
+      <span class="copy-entry-label">${c.label}</span>
+      <button class="copy-entry-remove" onclick="removeEditCopy(${i})">×</button>
+    </div>`
+  ).join('');
+}
+
 function saveEdit(){
   const id=document.getElementById('edit-id').value, c=cards.find(x=>x.id===id); if(!c) return;
+  c.copies = editCopies.slice();
   const rv=parseFloat(document.getElementById('ep-raw').value), av=parseFloat(document.getElementById('ep-ace').value), pv=parseFloat(document.getElementById('ep-psa').value);
   c.priceRaw=isNaN(rv)?null:rv; c.priceAce=isNaN(av)?null:av; c.pricePsa=isNaN(pv)?null:pv;
   c.cmUrl=document.getElementById('ep-cm').value.trim(); c.pcUrl=document.getElementById('ep-pc').value.trim();
@@ -1201,8 +1292,59 @@ function saveEdit(){
 }
 
 function deleteCard(id){ if(!confirm('Kaart verwijderen?')) return; cards=cards.filter(c=>c.id!==id); saveCards(); updateStats(); renderCards(); showToast('Verwijderd'); }
+function openCardPopup(id) {
+  const c = cards.find(x=>x.id===id);
+  if(!c) return;
+  const cur = cfg.currency||'EUR';
+  const num = (c.number||'').split('/')[0].trim();
+  const rv = c.priceRaw??c.ebayRaw;
+  const av = c.priceAce??c.ebayAce;
+  const pv = c.pricePsa??c.ebayPsa;
+  const allCopies = c.copies||[];
+  const rawCount = allCopies.filter(x=>x.type==='raw').length;
+  const aceItems = allCopies.filter(x=>x.type==='ace');
+  const psaItems = allCopies.filter(x=>x.type==='psa');
+
+  const gradeRows = [
+    ...(rawCount>0?[`<div class="card-tile-grade-row"><span class="card-tile-grade">Raw</span><span class="card-tile-qty-badge">Qty: ${rawCount}</span><span class="card-tile-grade-price">${fmt(rv,cur)}</span></div>`]:[]),
+    ...aceItems.map(x=>`<div class="card-tile-grade-row"><span class="card-tile-grade">ACE ${x.grade}</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">${fmt(av,cur)}</span></div>`),
+    ...psaItems.map(x=>`<div class="card-tile-grade-row"><span class="card-tile-grade">PSA ${x.grade}</span><span class="card-tile-qty-badge">Qty: 1</span><span class="card-tile-grade-price">${fmt(pv,cur)}</span></div>`)
+  ].join('');
+
+  document.getElementById('card-popup-content').innerHTML = `
+    <div class="card-popup-header">
+      ${c.imageLarge||c.imageSmall ? `<img class="card-popup-img" src="${c.imageLarge||c.imageSmall}" alt="${c.name}">` : ''}
+      <div style="flex:1;min-width:0;">
+        <div class="card-popup-name">${c.name}</div>
+        <div class="card-popup-meta">
+          ${c.set||''}${num?' • #'+num:''}<br>
+          ${c.rarity||''}
+        </div>
+        <div style="margin-top:8px;">${gradeRows||`<div class="card-tile-price">${fmt(c.priceRaw??c.ebayRaw,cur)}</div>`}</div>
+      </div>
+    </div>
+    <div class="card-popup-links">
+      <a class="card-popup-link" href="${ebayUrl(c,'raw')}" target="_blank">eBay Raw</a>
+      <a class="card-popup-link" href="${ebayUrl(c,'PSA 10')}" target="_blank">eBay PSA</a>
+      <a class="card-popup-link" href="${ebayUrl(c,'ACE 10')}" target="_blank">eBay ACE</a>
+      <a class="card-popup-link" href="${cmUrl(c)}" target="_blank">Cardmarket</a>
+      <a class="card-popup-link" href="${pcUrl(c)}" target="_blank" style="grid-column:span 2;">Pricechart</a>
+    </div>
+    <div class="card-popup-actions">
+      <button class="card-popup-action refresh" onclick="refreshCard('${c.id}');closeCardPopup()">↻ eBay verversen</button>
+      <button class="card-popup-action edit" onclick="closeCardPopup();editCard('${c.id}')">✎ Bewerken</button>
+      <button class="card-popup-action del" style="grid-column:span 2;" onclick="closeCardPopup();deleteCard('${c.id}')">✕ Verwijderen</button>
+    </div>`;
+  document.getElementById('card-popup').classList.add('open');
+}
+
+function closeCardPopup() {
+  document.getElementById('card-popup').classList.remove('open');
+}
+
 function closeModal(){ document.getElementById('edit-modal').classList.remove('open'); }
 document.getElementById('edit-modal').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
+document.getElementById('card-popup').addEventListener('click',function(e){ if(e.target===this) closeCardPopup(); });
 
 function updateStats(){
   document.getElementById('total-cards').textContent=cards.length;
